@@ -1,0 +1,27 @@
+<footer id="footer">
+    <div class="layoutSingleColumn">
+        <div class="copyright">
+            {{ with .Site.Params.copyright }}
+            {{ . | markdownify }}
+            {{ else }}
+            © Copyright
+            {{ now.Format "2006"}}
+            {{ end }}
+        </div>
+    </div>
+
+</footer>
+
+{{- $opts := dict "minify" hugo.IsProduction -}}
+{{- $script := resources.Get "ts/app.ts" | js.Build $opts -}}
+<script type="text/javascript" src="{{ $script.RelPermalink }}" defer></script>
+
+{{ range .Site.Params.customJS }}
+{{ if ( or ( hasPrefix . "http://" ) ( hasPrefix . "https://" ) ) }}
+<!-- remote js -->
+<script src="{{ . }}"></script>
+{{ else }}
+<!-- local js -->
+<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+{{ end }}
+{{ end }}

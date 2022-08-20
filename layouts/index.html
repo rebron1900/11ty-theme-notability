@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+<div class="layoutSingleColumn">
+    <div class="articleList">
+        {{ $pages := .Site.RegularPages }}
+        {{ $paginator := .Paginate ($pages) }}
+        {{ range $paginator.Pages }}
+        <article class="articleItem">
+            {{ if .Params.categories }}
+            <div class="categories">
+                {{ range (.GetTerms "categories") }}
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+            </div>
+            {{ end}}
+            <h2 class="title"><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
+            {{ if .Params.tags }}
+            <div class="tags">
+                {{ range (.GetTerms "tags") }}
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+            </div>
+            {{ end}}
+        </article>
+        {{ end }}
+    </div>
+
+    {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
+    <div class="pagination">
+        {{ if $paginator.HasPrev }}
+        <span class="prev">
+            <a href="{{.Paginator.Prev.URL}}">
+                <span class="arrow">←</span> {{ with .Site.Params.newerPosts }}{{ . }}{{ else }}{{ i18n "postsNewer"
+                }}{{ end }}
+            </a>
+        </span>
+        {{ end }}
+
+        {{ if $paginator.HasNext }}
+        <span class="next">
+            <a href="{{.Paginator.Next.URL}}">
+                {{ with .Site.Params.olderPosts }}{{ . }}{{ else }}{{ i18n "postsOlder" }}{{ end }} <span
+                    class="arrow">→</span>
+            </a>
+        </span>
+        {{ end }}
+    </div>
+    {{ end }}
+
+
+</div>
+{{ end }}

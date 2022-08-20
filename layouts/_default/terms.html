@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ partial "profile.html" . }}
+<header class="u-backgroundColorGray tag--header">
+    <h1 class="post-title">{{.Title}}</h1>
+</header>
+<section class="layoutSingleColumn u-paddingTop50">
+    {{ $data := .Data }}
+    {{ range $key, $value := .Data.Terms.ByCount }}
+    <div class="cagegory--item">
+        <a href="{{ $value.Page.Permalink }}">
+            {{ $value.Page.Title }}<span>({{ $value.Count }})</span>
+        </a>
+        <div>{{ $value.Page.Params.description }}</div>
+    </div>
+    {{ end }}
+</section>
+{{ end }}

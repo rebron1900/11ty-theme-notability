@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ partial "profile.html" . }}
+
+<div class="layoutSingleColumn u-paddingTop50">
+    <h2 class="article--headline">About Me</h2>
+    <div class="graph">
+        {{ .Content }}
+    </div>
+</div>
+
+{{ end }}
