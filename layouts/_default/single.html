@@ -1,22 +1,27 @@
 {{ define "main" }}
 
-<div class="layoutSingleColumn u-paddingTop50">
+<div class="layoutSingleColumn u-paddingTop50 u-xs-paddingTop15">
     <h2 class="article--headline">{{ .Title }}</h2>
+    {{ if .Params.description }}
+    <div class="article--subline">
+        {{ .Params.description }}
+    </div>
+    {{end}}
     <div class="article--meta"><time>{{ .Date | time.Format ":date_long" }}</time></div>
     <div class="content graph">
         {{ .Content }}
     </div>
-    <div class="tags u-paddingTop20">
+    <div class="article--tags u-paddingTop20">
         {{ range (.GetTerms "tags") }}
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        <a href="{{ .RelPermalink }}" class="artile--tag"><span>#</span>{{ .LinkTitle }}</a>
         {{ end }}
     </div>
+    {{ partial "related.html" . }}
     {{ if .Params.twitter }}
     <div class="twitter--area">
         <a href="{{ .Params.twitter }}" target="_blank" class="twitter--btn">Reply on twitter</a>
     </div>
     {{end}}
-    {{ partial "related.html" . }}
 </div>
 
 {{ end }}

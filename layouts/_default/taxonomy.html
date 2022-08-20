@@ -19,6 +19,7 @@
                 {{ .Title }}
             </a>
         </h2>
+        <div class="time">{{ .Date | time.Format ":date_long" }}</div>
         <div class="tags">
             {{ range (.GetTerms "tags") }}
             <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
