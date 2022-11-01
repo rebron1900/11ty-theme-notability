@@ -3,6 +3,9 @@
 
 <header class="u-backgroundColorGray tag--header">
     <h1 class="post-title">{{.Title}}</h1>
+    {{ if .Params.description }}
+    <div class="taxonomy--description">{{ .Params.description }}</div>
+    {{ end }}
 </header>
 <div class="layoutSingleColumn u-paddingTop50">
     {{ range .Data.Pages }}

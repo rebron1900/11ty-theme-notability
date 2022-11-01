@@ -16,6 +16,19 @@
         <a href="{{ .RelPermalink }}" class="artile--tag"><span>#</span>{{ .LinkTitle }}</a>
         {{ end }}
     </div>
+    {{ range (.GetTerms "categories") }}
+    <div class="postCat--item">
+        {{ if .Params.image }}
+        <img src="{{ .Params.image}}" class="cover" />
+        {{ end }}
+        <div class="postCat--content">
+            <a href="{{ .RelPermalink }}" class="artile--category">
+                {{ .LinkTitle }}
+            </a>
+            <p>{{ .Params.description }}</p>
+        </div>
+    </div>
+    {{ end }}
     {{ partial "related.html" . }}
     {{ if .Params.twitter }}
     <div class="twitter--area">

@@ -28,7 +28,10 @@ class WP_DOUBAN {
     }
 
     _fetchGenres() {
-        fetch(this.baseAPI + "genres?token=" + this.token)
+        document.querySelector(".db--genres")!.innerHTML = "";
+        fetch(
+            this.baseAPI + "genres?token=" + this.token + "&type=" + this.type
+        )
             .then((response) => response.json())
             .then((t) => {
                 // @ts-ignore
@@ -208,12 +211,12 @@ class WP_DOUBAN {
         this.on("click", ".db--navItem", (t: any) => {
             if (t.currentTarget.classList.contains("current")) return;
             this.genre = [];
-            this.type = t.target.dataset.type;
-            if (this.type == "movie") {
+            this.type = t.currentTarget.dataset.type;
+            if (this.type != "book") {
+                this._fetchGenres();
                 document
-                    .querySelector(".db--genres")!
+                    .querySelector(".db--genres")
                     .classList.remove("u-hide");
-                this._renderGenre();
             } else {
                 document.querySelector(".db--genres")!.classList.add("u-hide");
             }

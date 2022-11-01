@@ -5,27 +5,26 @@
         {{ $pages := .Site.RegularPages }}
         {{ $paginator := .Paginate ($pages) }}
         {{ range $paginator.Pages }}
-        <article class="articleItem">
-            {{ if .Params.categories }}
-            <div class="categories">
-                {{ range (.GetTerms "categories") }}
-                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        <article class="articleItem articleItem__withImage">
+            {{ if .Content }}
+            {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{
+                $url :=(strings.TrimPrefix "<img src=\"" $url) }}
+      {{ $url := strings.TrimRight " \"" $url }} <img src="{{ $url }}" class="cover" /> {{ end }} {{ end }}
+            <div class="content">
+                <h2 class="title">
+                    <a href="{{ .Permalink }}">
+                        {{ .Title }}
+                    </a>
+                </h2>
+                <div class="summary">{{ .Summary | truncate 60 }}</div>
+                {{ if .Truncated }}
+                Read More…
                 {{ end }}
+                <div class="time">{{ .Date | time.Format ":date_long" }}</div>
             </div>
-            {{ end}}
-            <h2 class="title"><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
-            <div class="time">{{ .Date | time.Format ":date_long" }}</div>
-            {{ if .Params.tags }}
-            <div class="tags">
-                {{ range (.GetTerms "tags") }}
-                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-                {{ end }}
-            </div>
-            {{ end}}
         </article>
         {{ end }}
     </div>
-
     {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
     <div class="pagination">
         {{ if $paginator.HasPrev }}
@@ -47,7 +46,5 @@
         {{ end }}
     </div>
     {{ end }}
-
-
 </div>
 {{ end }}
