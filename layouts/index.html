@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <div class="layoutSingleColumn">
-    <div class="articleList  u-xs-paddingTop15">
+    <div class="articleList u-xs-paddingTop15">
         {{ $pages := .Site.RegularPages }}
         {{ $paginator := .Paginate ($pages) }}
         {{ range $paginator.Pages }}
@@ -30,7 +30,7 @@
         {{ if $paginator.HasPrev }}
         <span class="prev">
             <a href="{{.Paginator.Prev.URL}}">
-                <span class="arrow">←</span> {{ with .Site.Params.newerPosts }}{{ . }}{{ else }}{{ i18n "postsNewer"
+                <span class="arrow">←</span> {{ with .Site.Params.newerPosts }}{{ . }}{{ else }}{{ "postsNewer"
                 }}{{ end }}
             </a>
         </span>
@@ -39,7 +39,7 @@
         {{ if $paginator.HasNext }}
         <span class="next">
             <a href="{{.Paginator.Next.URL}}">
-                {{ with .Site.Params.olderPosts }}{{ . }}{{ else }}{{ i18n "postsOlder" }}{{ end }} <span
+                {{ with .Site.Params.olderPosts }}{{ . }}{{ else }}{{ "postsOlder" }}{{ end }} <span
                     class="arrow">→</span>
             </a>
         </span>

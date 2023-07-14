@@ -1,16 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta property="og:title" content="最近购入的 X100V 配件 – Fatesinger">
-<meta property="og:url" content="https://fatesinger.com/101250">
-<meta property="og:image" content="//static.fatesinger.com/2022/08/sijbbor6wz6o5vdz.jpg">
-<meta property="og:description" content="最近购入的 X100V 配件，作者:bigfa，发布于2022-08-01">
-<meta property="og:type" content="article">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image:src" content="https://static.fatesinger.com/2022/08/sijbbor6wz6o5vdz.jpg">
-<meta name="twitter:site" content="@fatesinger">
-<meta name="twitter:title" content="最近购入的 X100V 配件">
-<meta name="twitter:description" content="最近购入的 X100V 配件，作者:bigfa，发布于2022-08-01">
 {{ $styles := resources.Get "scss/app.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 {{ $favicon := resources.Get "images/favicon.png" }}
@@ -21,23 +11,3 @@
 <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
 {{ end }}
 {{ end }}
-<script type="application/ld+json">
-    {
-        "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-        "@id": "https://fatesinger.com/101250",
-        "appid": "1602586526468095",
-        "title": "最近购入的 X100V 配件 - Fatesinger",
-        "images": [
-            "https://static.fatesinger.com/2022/08/sijbbor6wz6o5vdz.jpg",
-            "https://static.fatesinger.com/2022/08/lyil17wz4xjbi3b3.jpg",
-            "https://static.fatesinger.com/2022/08/w9sr27lplnqihikj.jpg"
-        ],
-      "pubDate": "2022-08-01T20:08:34",
-      "commentCount": 8,
-      "interactionStatistic": {
-        "@type": "InteractionCounter",
-        "interactionType": "http://schema.org/LikeAction",
-        "userInteractionCount": 1
-      }
-    }
-</script>

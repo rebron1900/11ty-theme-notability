@@ -1,8 +1,7 @@
 {{ define "main" }}
-{{ partial "profile.html" . }}
 
 <div class="layoutSingleColumn u-paddingTop50">
-    <h2 class="page--headline">About Me</h2>
+    <h2 class="page--headline">{{ .Title }}</h2>
     <div class="graph u-marginBottom30">
         {{ .Content }}
     </div>
