@@ -17,7 +17,9 @@
                     </a>
                 </h2>
                 <div class="summary">{{ .Summary | truncate 60 }}</div>
-                <div class="time">{{ .Date | time.Format ":date_long" }}
+                <div class="time"><time datetime="{{ time .Date }}" class="humane--time">{{ .Date | time.Format
+                        ":date_long"
+                        }}</time>
                     {{ if .Params.categories }}
                     <span class="dot"></span>
                     {{ range .Params.categories }}

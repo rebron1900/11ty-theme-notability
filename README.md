@@ -5,12 +5,18 @@ My personal stories hugo theme
 ## 使用方法
 
 ```
-git submodule add https://github.com/bigfa/Notability.git themes/notability
+git submodule add https://github.com/bigfa/hugo-theme-notability.git themes/notability
 
 echo "theme = 'notability'" >> hugo.toml
 ```
 
 ## Release Note
+
+### 0.0.4
+
+-   增加相对时间
+-   使用`normalize.css`
+-   本地化字体
 
 ### 0.0.3
 
