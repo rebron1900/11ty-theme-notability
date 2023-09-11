@@ -215,7 +215,7 @@ class WP_DOUBAN {
             if (this.type != "book") {
                 this._fetchGenres();
                 document
-                    .querySelector(".db--genres")
+                    .querySelector(".db--genres")!
                     .classList.remove("u-hide");
             } else {
                 document.querySelector(".db--genres")!.classList.add("u-hide");

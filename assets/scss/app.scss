@@ -692,3 +692,11 @@ a {
         margin-left: auto;
     }
 }
+
+.dot {
+    &::before {
+        content: "·";
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+}

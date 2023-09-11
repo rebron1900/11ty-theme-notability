@@ -8,24 +8,26 @@
 </header>
 <div class="layoutSingleColumn u-paddingTop50">
     {{ range .Data.Pages }}
-    <article class="articleItem">
-        {{ if .Params.categories }}
-        <div class="categories">
-            {{ range (.GetTerms "categories") }}
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            {{ end }}
-        </div>
-        {{ end}}
-        <h2 class="title">
-            <a href="{{ .Permalink }}">
-                {{ .Title }}
-            </a>
-        </h2>
-        <div class="time">{{ .Date | time.Format ":date_long" }}</div>
-        <div class="tags">
-            {{ range (.GetTerms "tags") }}
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            {{ end }}
+    <article class="articleItem articleItem__withImage">
+        {{ if .Content }}
+        {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{ $url
+            :=(strings.TrimPrefix "<img src=\"" $url) }}
+  {{ $url := strings.TrimRight " \"" $url }} <img src="{{ $url }}" class="cover" /> {{ end }} {{ end }}
+        <div class="content">
+            <h2 class="title">
+                <a href="{{ .Permalink }}">
+                    {{ .Title }}
+                </a>
+            </h2>
+            <div class="summary">{{ .Summary | truncate 60 }}</div>
+            <div class="time">{{ .Date | time.Format ":date_long" }}
+                {{ if .Params.categories }}
+                <span class="dot"></span>
+                {{ range .Params.categories }}
+                <a href="categories/{{ . | urlize }}/">{{ . }}</a>
+                {{ end }}
+                {{ end }}
+            </div>
         </div>
     </article>
     {{ end }}

@@ -17,10 +17,14 @@
                     </a>
                 </h2>
                 <div class="summary">{{ .Summary | truncate 60 }}</div>
-                {{ if .Truncated }}
-                Read More…
-                {{ end }}
-                <div class="time">{{ .Date | time.Format ":date_long" }}</div>
+                <div class="time">{{ .Date | time.Format ":date_long" }}
+                    {{ if .Params.categories }}
+                    <span class="dot"></span>
+                    {{ range .Params.categories }}
+                    <a href="categories/{{ . | urlize }}/">{{ . }}</a>
+                    {{ end }}
+                    {{ end }}
+                </div>
             </div>
         </article>
         {{ end }}

@@ -7,7 +7,13 @@
         {{ .Params.description }}
     </div>
     {{end}}
-    <div class="article--meta"><time>{{ .Date | time.Format ":date_long" }}</time></div>
+    <div class="article--meta"><time>{{ .Date | time.Format ":date_long" }}</time>{{ if .Params.categories }}
+        <span class="dot"></span>
+        {{ range .Params.categories }}
+        <a href="categories/{{ . | urlize }}/">{{ . }}</a>
+        {{ end }}
+        {{ end }}
+    </div>
     <div class="content graph">
         {{ .Content }}
     </div>
