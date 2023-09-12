@@ -1,8 +1,8 @@
 {{ define "main" }}
-<header class="u-backgroundColorGray tag--header">
+<header class="tag--header">
     <h1 class="post-title">{{.Title}}</h1>
 </header>
-<section class="layoutSingleColumn u-paddingTop50">
+<section class="layoutSingleColumn">
     {{ $data := .Data }}
     {{ range $key, $value := .Data.Terms.ByCount }}
     <div class="category--item">

@@ -137,46 +137,26 @@ body {
 }
 
 .metabar {
-    height: 68px;
-    line-height: 68px;
+    height: 78px;
+    line-height: 78px;
     position: relative;
-    padding-left: 20px;
-    padding-right: 20px;
+    //padding-left: 20px;
+    // padding-right: 20px;
+    background-color: #fafafa;
     // display: flex;
     //  align-items: center;
     // justify-content: center;
-    &--bordered {
-        border-bottom: 1px solid #eee;
-    }
-
-    &--contered {
-        position: absolute;
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    // &--bordered {
+    //     border-bottom: 1px solid #eee;
+    // }
 
     &--block {
         pointer-events: auto;
         display: flex;
         align-items: center;
         position: relative;
-        height: 68px;
+        height: 78px;
         //@include layoutSingleColumn--wide;
-        &__right {
-            margin-left: auto;
-            padding-right: 20px;
-            a {
-                margin-left: 15px;
-                //font-weight: bold;
-                &:hover {
-                    text-decoration: underline;
-                    color: var(--main-hover-color);
-                }
-            }
-        }
     }
     &--headline {
         margin-top: 0;
@@ -212,6 +192,7 @@ body {
     margin-left: auto;
     align-items: center;
     margin-left: auto;
+    font-size: 14px;
     a {
         margin: 0 20px;
         display: flex;
@@ -345,7 +326,7 @@ a {
 }
 
 .articleItem {
-    padding: 15px;
+    padding: 15px 5px;
     //border: 1px solid #eee;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -369,6 +350,7 @@ a {
             font-size: 16px;
             line-height: 1.6;
             color: var(--text-gray-light);
+            word-break: break-all;
         }
     }
 
@@ -400,6 +382,27 @@ a {
             &:hover {
                 color: var(--main-hover-color);
             }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .articleItem__withImage {
+        .title {
+            font-size: 18px !important;
+        }
+        .cover {
+            width: 80px;
+            height: 80px;
+        }
+        .summary {
+            font-size: 14px;
+            display: -webkit-box;
+            max-height: 3.2em;
+            overflow: hidden;
+        }
+        .time {
+            font-size: 12px;
         }
     }
 }
@@ -448,6 +451,12 @@ a {
     margin-bottom: 0px;
 }
 
+@media (max-width: 768px) {
+    .article--headline {
+        font-size: 20px;
+    }
+}
+
 .article--subline {
     font-size: 20px;
     color: var(--text-gray-lightest);
@@ -455,7 +464,7 @@ a {
 }
 
 .tag--header {
-    padding: 50px 0;
+    padding: 30px 0;
     text-align: center;
 }
 
