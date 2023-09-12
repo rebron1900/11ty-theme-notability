@@ -61,14 +61,14 @@
 
     blockquote {
         color: var(--text-gray-medium);
-        margin-left: -50px;
-        margin-right: -50px;
+        margin-left: -20px;
+        margin-right: -20px;
         margin-bottom: 35px;
         // font-size: 14px;
-        background-image: url(../images/b.svg);
-        background-repeat: no-repeat;
-        background-position: left 30px top 0px;
-        padding-top: 30px;
+        //background-image: url(../images/b.svg);
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 10px;
         p {
             &:last-child {
                 margin-bottom: 0;

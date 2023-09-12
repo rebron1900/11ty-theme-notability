@@ -12,6 +12,11 @@ echo "theme = 'notability'" >> hugo.toml
 
 ## Release Note
 
+### 0.0.5
+
+-   列表样式调整
+-   修复时间技术错误
+
 ### 0.0.4
 
 -   增加相对时间

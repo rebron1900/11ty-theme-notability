@@ -1,4 +1,4 @@
-class WP_DOUBAN {
+class NOTE_DOUBAN {
     ver: string;
     type: any;
     finished: boolean;
@@ -356,7 +356,7 @@ class WP_DOUBAN {
     }
 }
 
-new WP_DOUBAN();
+new NOTE_DOUBAN();
 
 if (document.querySelector(".menu--icon")) {
     document.querySelector(".menu--icon")!.addEventListener("click", () => {
@@ -401,9 +401,9 @@ class noteDate {
         } else if (between < 86400) {
             return `${Math.ceil(between / 3600)} 小时前`;
         } else if (between < 86400 * 30) {
-            return `${Math.ceil(between / (86400 * 30))} 天前`;
+            return `${Math.ceil(between / 86400)} 天前`;
         } else if (between < 86400 * 30 * 12) {
-            return `${Math.ceil(between / (86400 * 12 * 30))} 月前`;
+            return `${Math.ceil(between / (86400 * 30))} 月前`;
         } else {
             return (
                 time.getFullYear() +
