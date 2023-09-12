@@ -9,7 +9,7 @@ class NOTE_DOUBAN {
     baseAPI: string = "https://node.wpista.com/v1/outer/";
     token: string;
 
-    constructor() {
+    constructor(config: any) {
         this.ver = "1.0.1";
         this.type = "movie";
         this.finished = false;
@@ -17,6 +17,7 @@ class NOTE_DOUBAN {
         this.genre_list = [];
         this.genre = [];
         this.subjects = [];
+        this.token = config.token;
         this._create();
     }
 
@@ -215,8 +216,8 @@ class NOTE_DOUBAN {
             if (this.type != "book") {
                 this._fetchGenres();
                 document
-                    .querySelector(".db--genres")!
-                    .classList.remove("u-hide");
+                    .querySelector(".db--genres")
+                    ?.classList.remove("u-hide");
             } else {
                 document.querySelector(".db--genres")!.classList.add("u-hide");
             }
@@ -263,6 +264,36 @@ class NOTE_DOUBAN {
             this._fetchData();
             this._handleScroll();
             this._handleNavClick();
+        }
+
+        if (document.querySelector(".js-db")) {
+            document.querySelectorAll(".js-db").forEach((item: any) => {
+                const db = item;
+                const id = db.dataset.id;
+                const type = db.dataset.type;
+                const nodeParent = db.parentNode as HTMLElement;
+                fetch(
+                    // @ts-ignore
+                    this.baseAPI + `${type}/${id}?token=${this.token}`
+                ).then((response) => {
+                    response.json().then((t) => {
+                        if (t.data) {
+                            const data = t.data;
+                            const node = document.createElement("div");
+                            node.classList.add("doulist-item");
+                            node.innerHTML = `<div class="doulist-subject">
+                            <div class="doulist-post"><img decoding="async" referrerpolicy="no-referrer" src="${data.poster}"></div>
+                            <div class="doulist-content">
+                            <div class="doulist-title"><a href="${data.link}" class="cute" target="_blank" rel="external nofollow">${data.name}</a></div>
+                            <div class="rating"><span class="allstardark"><span class="allstarlight" style="width:55%"></span></span><span class="rating_nums"> ${data.douban_score} </span></div>
+                            <div class="abstract">${data.card_subtitle}</div>
+                            </div>
+                            </div>`;
+                            nodeParent.replaceWith(node);
+                        }
+                    });
+                });
+            });
         }
 
         if (document.querySelector(".db--collection")) {
@@ -356,7 +387,10 @@ class NOTE_DOUBAN {
     }
 }
 
-new NOTE_DOUBAN();
+new NOTE_DOUBAN({
+    // @ts-ignore
+    token: window.WPD_TOKEN,
+});
 
 if (document.querySelector(".menu--icon")) {
     document.querySelector(".menu--icon")!.addEventListener("click", () => {
