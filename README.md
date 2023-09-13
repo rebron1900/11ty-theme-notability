@@ -12,6 +12,10 @@ echo "theme = 'notability'" >> hugo.toml
 
 ## Release Note
 
+### 0.0.8
+
+-   修改为本地获取条目，无需设置 token
+
 ### 0.0.7
 
 -   新增豆瓣条目支持
