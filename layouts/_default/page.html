@@ -3,7 +3,7 @@
 <div class="layoutSingleColumn u-paddingTop50">
     <h2 class="title">{{ .Title }}</h2>
     <div class="tip">
-        <time datetime="{{ .PublishDate }}">{{ .PublishDate }}</time>
+        <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{ .PublishDate }}</time>
     </div>
     <div class="content graph">
         {{ .Content }}

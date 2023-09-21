@@ -574,6 +574,11 @@ a {
 .site--footer {
     font-size: 14px;
     //color: var(--text-gray-light);
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .u-marginBottom30 {
