@@ -4,7 +4,7 @@
             {{ with .Site.Params.copyright }}
             {{ . | markdownify }}
             {{ else }}
-            © Copyright
+            © {{ i18n "copyRight"}}
             {{ now.Format "2006"}}
             {{ end }}
         </div>
