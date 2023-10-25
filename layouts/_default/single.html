@@ -9,10 +9,11 @@
     {{end}}
     <div class="article--meta">
         <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{
-            .Date.Format "2006-01-02 15:04:01" }}</time>{{ if .Params.categories }}
+            .Date.Format "2006-01-02 15:04:01" }}</time>
+        {{ if .Params.categories }}
         <span class="dot"></span>
-        {{ range .Params.categories }}
-        <a href="categories/{{ . | urlize }}/">{{ . }}</a>
+        {{ range (.GetTerms "categories") }}
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         {{ end }}
         {{ end }}
     </div>
