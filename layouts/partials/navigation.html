@@ -2,7 +2,7 @@
 	<div class="metabar--block layoutSingleColumn" itemprop="publisher" itemscope
 		itemtype="https://schema.org/Organization">
 		<h1 class="metabar--headline" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-			<a href='{{ "" | relURL }}' class="metabar--logo">
+			<a href='{{ site.Home.Permalink }}' class="metabar--logo">
 				{{ $logo := resources.Get "images/logo.png" }}
 				<img src="{{ $logo.RelPermalink }}" class="metabar--logoImage" width=38 height="47" />
 			</a>

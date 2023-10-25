@@ -12,6 +12,10 @@ echo "theme = 'notability'" >> hugo.toml
 
 ## Release Note
 
+### 0.1.1
+
+-   增加多语言支持
+
 ### 0.1.0
 
 -   增加主题作者信息
