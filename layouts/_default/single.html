@@ -40,8 +40,8 @@
     </div>
     {{ range (.GetTerms "categories") }}
     <div class="postCat--item">
-        {{ if .Params.image }}
-        <img src="{{ .Params.image}}" class="cover" />
+        {{ if .Params.cover }}
+        <img src="{{ .Params.cover}}" class="cover" />
         {{ end }}
         <div class="postCat--content">
             <a href="{{ .RelPermalink }}" class="artile--category">

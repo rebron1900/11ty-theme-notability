@@ -1,6 +1,6 @@
 # Hugo Theme Notability
 
-My personal stories hugo theme
+hugo theme
 
 ## 使用方法
 
@@ -11,6 +11,10 @@ echo "theme = 'notability'" >> hugo.toml
 ```
 
 ## Release Note
+
+### 0.1.2
+
+-   列表页细节调整
 
 ### 0.1.1
 
