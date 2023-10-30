@@ -595,6 +595,7 @@ a {
     margin-bottom: 15px;
     a {
         color: var(--main-bg-color);
+        margin-right: 10px;
         span {
             margin-right: 3px;
         }
@@ -631,6 +632,10 @@ a {
         flex: 0 0 auto;
         border-radius: 4px;
         margin-right: 15px;
+    }
+    p {
+        color: var(--text-gray-light);
+        font-size: 14px;
     }
 }
 
@@ -751,4 +756,16 @@ a {
             }
         }
     }
+}
+
+.archive--tagList {
+    display: flex;
+    flex-wrap: wrap;
+}
+.archive--tagItem {
+    margin: 10px;
+    background-color: #f2f4f6;
+    padding: 3px 12px;
+    border-radius: 2px;
+    color: var(--text-gray-light);
 }
