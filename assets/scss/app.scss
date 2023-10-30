@@ -99,6 +99,17 @@ p {
     margin-bottom: 0;
 }
 
+code {
+    font-size: 14px;
+    background-color: #f0f0f0;
+}
+
+pre {
+    code {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
 button,
 input,
 textarea {

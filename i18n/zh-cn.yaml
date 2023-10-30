@@ -10,6 +10,12 @@ copyRight:
 translations:
     other: 其他语言
 
+postsOlder:
+    other: 更早文章
+
+postsNewer:
+    other: 更新文章
+
 article:
     back:
         other: 返回

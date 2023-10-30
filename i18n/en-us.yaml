@@ -10,6 +10,12 @@ copyRight:
 translations:
     other: Translations
 
+postsOlder:
+    other: 更早文章
+
+postsNewer:
+    other: 更新文章
+
 article:
     back:
         other: back
