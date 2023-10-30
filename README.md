@@ -12,6 +12,10 @@ echo "theme = 'notability'" >> hugo.toml
 
 ## Release Note
 
+### 0.1.4
+
+-   文章目录支持
+
 ### 0.1.3
 
 -   有序列表样式修正

@@ -725,3 +725,30 @@ a {
         }
     }
 }
+
+.toc {
+    font-size: 14px;
+    padding: 10px 15px;
+    background-color: var(--background-gray-lightest);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    summary {
+        cursor: pointer;
+    }
+    &-title {
+        font-weight: 600;
+    }
+    ul {
+        padding-left: 10px;
+        li {
+            &::before {
+                content: "·";
+                margin-right: 5px;
+            }
+            & > ul {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+        }
+    }
+}
