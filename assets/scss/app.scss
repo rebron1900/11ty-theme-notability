@@ -826,3 +826,19 @@ a {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+.article--copyright {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding-bottom: 20px;
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    svg {
+        margin-left: 5px;
+        user-select: none;
+    }
+}

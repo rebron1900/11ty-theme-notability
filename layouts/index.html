@@ -2,7 +2,7 @@
 
 <div class="layoutSingleColumn">
     <div class="articleList u-xs-paddingTop15">
-        {{ $pages := .Site.RegularPages }}
+        {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
         {{ $paginator := .Paginate ($pages) }}
         {{ range $paginator.Pages }}
         <article class="articleItem articleItem__withImage">
