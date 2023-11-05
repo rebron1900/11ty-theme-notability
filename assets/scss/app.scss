@@ -471,9 +471,13 @@ a {
 }
 
 .article--subline {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--text-gray-lightest);
     font-weight: 200;
+    line-height: 1.4;
+    .article--headline + & {
+        margin-top: 5px;
+    }
 }
 
 .tag--header {

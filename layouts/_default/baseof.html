@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ $.Site.LanguageCode | default " en" }}">
+<html lang="{{ $.Site.LanguageCode | default " en" }}" prefix="og: http://ogp.me/ns#">
 
 <head>
     <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
