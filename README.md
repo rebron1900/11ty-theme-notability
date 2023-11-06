@@ -12,6 +12,10 @@ echo "theme = 'notability'" >> hugo.toml
 
 ## Release Note
 
+### 0.1.6
+
+-   修复链接渲染问题
+
 ### 0.1.5
 
 -   结构化数据支持
