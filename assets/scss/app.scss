@@ -483,6 +483,10 @@ a {
 .tag--header {
     padding: 30px 0;
     text-align: center;
+    .post-title {
+        font-size: 28px;
+        font-weight: bold;
+    }
 }
 
 .u-backgroundColorGray {
@@ -504,6 +508,9 @@ a {
     border-bottom: 1px solid #eee;
     display: flex;
     align-items: center;
+    &:last-child {
+        border-bottom: 0;
+    }
     a {
         &:hover {
             color: var(--main-hover-color);
@@ -785,7 +792,8 @@ a {
     margin: 10px;
     background-color: #f2f4f6;
     padding: 3px 12px;
-    border-radius: 2px;
+    border-radius: 4px;
+    font-size: 14px;
     color: var(--text-gray-light);
 }
 
