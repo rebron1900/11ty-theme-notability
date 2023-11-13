@@ -12,6 +12,10 @@ echo "theme = 'notability'" >> hugo.toml
 
 ## Release Note
 
+### 0.2.0
+
+-   增加状态文章格式
+
 ### 0.1.8
 
 -   文章内链短代码

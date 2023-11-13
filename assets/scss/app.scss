@@ -881,3 +881,45 @@ a {
         background-color: #fafafa;
     }
 }
+
+.post--item {
+    padding: 25px 0px;
+    //border-bottom: 1px solid #eee;
+    border-radius: 5px;
+    &__status {
+        .avatar {
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            a {
+                color: var(--text-gray-light);
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                &:hover {
+                    color: var(--main-hover-color);
+                }
+            }
+        }
+        //background-color: #fafafa;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .description {
+            margin-bottom: 0;
+        }
+    }
+    display: flex;
+    align-items: center;
+    .description {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-gray-light);
+        word-break: break-all;
+        margin-bottom: 4px;
+    }
+}
