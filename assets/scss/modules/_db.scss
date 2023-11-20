@@ -35,7 +35,7 @@
         object-fit: cover;
         border-radius: 4px;
         &:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px var(--main-border-color-light);
         }
     }
 
@@ -52,7 +52,7 @@
     }
 
     &--genreItem {
-        background: #f2f4f6;
+        background: var(--background-gray-light);
         font-size: 12px;
         padding: 5px 12px;
         border-radius: 4px;
@@ -111,7 +111,7 @@
             margin-bottom: 2px;
             font-weight: 900;
             &:after {
-                content: '';
+                content: "";
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
                 right: 0;
@@ -141,7 +141,7 @@
     margin-bottom: 2px;
     font-weight: 900;
     &:after {
-        content: '';
+        content: "";
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         right: 0;
@@ -159,10 +159,10 @@
 .doulist-item {
     margin: 30px 0;
     color: #666;
-    border: 1px solid #eee;
+    border: 1px solid var(--main-border-color);
     border-radius: 4px;
     &:hover {
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 3px 12px var(--main-border-color-light);
     }
 
     .doulist-subject {
@@ -185,7 +185,7 @@
             margin-bottom: 2px;
             font-weight: 900;
             &:after {
-                content: '';
+                content: "";
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
                 left: 0;
@@ -229,7 +229,7 @@
                 height: 16px;
                 width: 80px;
                 background-repeat: repeat;
-                background-image: url('../images/star.svg');
+                background-image: url("../images/star.svg");
                 background-size: auto 100%;
                 margin-right: 5px;
             }
@@ -241,7 +241,7 @@
                 height: 16px;
                 overflow: hidden;
                 background-repeat: repeat;
-                background-image: url('../images/star-fill.svg');
+                background-image: url("../images/star-fill.svg");
                 background-size: auto 100%;
             }
         }
@@ -262,11 +262,11 @@
 .db--date {
     position: relative;
     font-size: 20px;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text-gray-light);
     font-weight: 900;
     line-height: 1;
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0.5em;
         bottom: -2px;
@@ -293,9 +293,9 @@
     display: flex;
     align-items: center;
     padding: 15px 0;
-    border-bottom: 1px dotted #eee;
+    border-bottom: 1px dotted var(--main-border-color);
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.55);
+    color: var(--text-gray-lightest);
     &:last-child {
         border-bottom: 0;
     }
@@ -315,7 +315,7 @@
             height: 16px;
             width: 80px;
             background-repeat: repeat;
-            background-image: url('../images/star.svg');
+            background-image: url("../images/star.svg");
             background-size: auto 100%;
             margin-right: 5px;
         }
@@ -327,7 +327,7 @@
             height: 16px;
             overflow: hidden;
             background-repeat: repeat;
-            background-image: url('../images/star-fill.svg');
+            background-image: url("../images/star-fill.svg");
             background-size: auto 100%;
         }
     }
@@ -357,7 +357,7 @@
 
     &__month {
         font-size: 14px;
-        color: rgba(0, 0, 0, 0.6);
+        color: var(--text-gray-light);
         font-weight: 900;
     }
 }
@@ -403,7 +403,7 @@
     &--item {
         padding: 25px 0;
         font-size: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid var(--main-border-color-light);
         &:last-child {
             border-bottom: 0;
         }
@@ -439,7 +439,7 @@
     &--item {
         padding: 15px 0;
         font-size: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid var(--main-border-color-light);
         &:last-child {
             border-bottom: 0;
         }

@@ -1,110 +1,100 @@
 # Hugo Theme Notability
 
-hugo theme
+Hugo theme
 
-## 使用方法
+## How to use
 
 ```
 git submodule add https://github.com/bigfa/hugo-theme-notability.git themes/notability
 
-echo "theme = 'notability'" >> hugo.toml
+echo "theme = 'notability'" >> config.toml
 ```
 
 ## Release Note
 
+### 0.3.0
+
+-   add dark mode support
+-   add back to top button
+
 ### 0.2.0
 
--   增加状态文章格式
+-   Added status post format
 
 ### 0.1.8
 
--   文章内链短代码
+-   In-post link shortcode
 
 ### 0.1.7
 
--   相对时间多语言支持
--   细节样式调整
+-   Multilingual support for relative time
+-   Detail style adjustments
 
 ### 0.1.6
 
--   修复链接渲染问题
+-   Fixed link rendering issue
 
 ### 0.1.5
 
--   结构化数据支持
+-   Structured data support
 
 ### 0.1.4
 
--   文章目录支持
+-   Article table of contents support
 
 ### 0.1.3
 
--   有序列表样式修正
+-   Ordered list style correction
 
 ### 0.1.2
 
--   列表页细节调整
+-   Detail adjustments on the list page
 
 ### 0.1.1
 
--   增加多语言支持
+-   Added i8n support
 
 ### 0.1.0
 
--   增加主题作者信息
+-   Added author information for the theme
 
 ### 0.0.9
 
--   修复 safari 浏览器下时间格式化错误的问题
+-   Fixed the time formatting error in Safari browser
 
 ### 0.0.8
 
--   修改为本地获取条目，无需设置 token
+-   Changed to local entry retrieval, no token setting required
 
 ### 0.0.7
 
--   新增豆瓣条目支持
-
-使用方法
-
-微信扫码登录https://node.wpista.com/
-
-输入你的豆瓣数字 id，点击保存即可自动同步豆瓣记录。
-
-点击 Get integration token 会生成一个 token。
-
-在你的站点配置中加入参数
-
-```
-[params]
-    wpdToken= '上面生成的token'
-```
+-   New DouBan entries support
 
 ### 0.0.6
 
--   修改头部样式
--   移动端样式优化
+-   Header style changes
+-   Mobile style optimization
 
 ### 0.0.5
 
--   列表样式调整
--   修复时间技术错误
+-   List style adjustments
+-   Fixed time calculation error
 
 ### 0.0.4
 
--   增加相对时间
--   使用`normalize.css`
--   本地化字体
+-   Added relative time
+-   Use `normalize.css`
+-   Localized fonts
 
 ### 0.0.3
 
--   增加菜单设置
--   移除多余页面
+-   Added menu configuration
+-   Removed redundant pages
 
 ### 0.0.2
 
--   修复豆瓣页面的一些 UI 问题
+-   Fixed some UI issues on the DouBan page
 
 ### 0.0.1
 
--   初始化
+-   Initial release

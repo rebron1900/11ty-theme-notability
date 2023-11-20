@@ -1,10 +1,22 @@
 .graph {
     color: var(--text-main-color);
     word-break: break-all;
+
+    code {
+        font-size: 14px;
+        background-color: var(--background-gray-light);
+    }
+
+    pre {
+        code {
+            background-color: rgba(0, 0, 0, 0);
+        }
+    }
+
     pre {
         word-break: break-all;
         white-space: break-spaces;
-        background-color: #f2f4f6;
+        background-color: var(--background-gray-light);
         padding: 10px;
         border-radius: 5px;
         font-size: 14px;
@@ -18,7 +30,7 @@
             }
         }
         margin-bottom: 25px;
-        border: 1px solid #eee;
+        border: 1px solid var(--main-border-color);
         border-radius: 4px;
         .mixtapeImage {
             width: 120px;
@@ -38,7 +50,7 @@
                 font-style: normal;
                 font-size: 14px;
                 line-height: 1.6;
-                color: rgba(0, 0, 0, 0.64);
+                color: var(--text-gray-light);
             }
             .markup--strong {
                 font-weight: 700;
@@ -67,7 +79,7 @@
         // font-size: 14px;
         //background-image: url(../images/b.svg);
         padding: 20px;
-        background-color: #f8f8f8;
+        background-color: var(--background-gray-lightest);
         border-radius: 10px;
         p {
             &:last-child {
@@ -247,7 +259,7 @@
         &--mixtapeEmbed {
             margin-bottom: 25px;
             padding: 15px 0;
-            border: 1px solid #eee;
+            border: 1px solid var(--main-border-color);
             border-radius: 4px;
             .mixtapeImage {
                 display: none;
@@ -258,7 +270,7 @@
                     font-style: normal;
                     font-size: 12px;
                     line-height: 1.4;
-                    color: rgba(0, 0, 0, 0.64);
+                    color: var(--text-gray-light);
                 }
                 .markup--strong {
                     line-height: 1.3;
