@@ -79,11 +79,9 @@
     </div>
     {{ end }}
     {{ partial "related.html" . }}
-    {{ if .Params.twitter }}
-    <div class="twitter--area">
-        <a href="{{ .Params.twitter }}" target="_blank" class="twitter--btn">Reply on twitter</a>
-    </div>
-    {{end}}
+    {{ if .Params.story_id }}
+    {{ partial "commentlist.html" . }}
+    {{ end }}
 </div>
 
 {{ end }}

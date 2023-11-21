@@ -12,6 +12,10 @@ echo "theme = 'notability'" >> config.toml
 
 ## Release Note
 
+### 0.3.1
+
+-   add comment
+
 ### 0.3.0
 
 -   add dark mode support

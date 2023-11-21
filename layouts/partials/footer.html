@@ -22,6 +22,7 @@
 
 <script type="text/javascript">
     window.WPD_TOKEN = "{{ .Site.Params.wpdToken }}";
+    window.commentDomain = "{{ .Site.Params.commentDomain }}";
 </script>
 <script type="text/javascript">
     window.timeFormat = {
@@ -38,8 +39,11 @@
     }
 </script>
 {{- $opts := dict "minify" hugo.IsProduction -}}
+{{- $replay := resources.Get "js/comment.min.js" | js.Build $opts -}}
 {{- $script := resources.Get "ts/app.ts" | js.Build $opts -}}
-<script type="text/javascript" src="{{ $script.RelPermalink }}" defer></script>
+{{- $comment := resources.Get "ts/comment.ts" | js.Build $opts -}}
+{{ $ts := slice $replay $script $comment | resources.Concat "ts/bundle.js" }}
+<script type="text/javascript" src="{{ $ts.RelPermalink }}" defer></script>
 
 {{ range .Site.Params.customJS }}
 {{ if ( or ( hasPrefix . "http://" ) ( hasPrefix . "https://" ) ) }}

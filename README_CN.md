@@ -12,6 +12,10 @@ echo "theme = 'notability'" >> hugo.toml
 
 ## Release Note
 
+### 0.1.1
+
+-   增加评论功能
+
 ### 0.3.0
 
 -   增加暗黑模式支持
