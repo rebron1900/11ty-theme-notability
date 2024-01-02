@@ -1,0 +1,17 @@
+---
+layout: base
+pagination:
+  data: collections.docs
+  size: 1
+  alias: page
+permalink: /{{ page.slug }}/
+---
+<div class="layoutSingleColumn u-paddingTop50">
+    <h2 class="title">{{ page.title }}</h2>
+    <div class="content graph">
+        {{ page.html | safe }}
+    </div>
+    <div class="tags u-paddingTop20">
+        {% include 'partials/tagloop.njk' %}
+    </div>
+</div>

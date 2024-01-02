@@ -1,0 +1,33 @@
+---
+layout: base
+---
+<div class="layoutSingleColumn"><div class="page--archive"><h2 class="archive--title__year">2023</h2><h3 class="archive--title__month">November</h3><ul class="archive--list"><li class="archive--item"><div class="archive--title"><a href="/story/fujifilm-ef-60/">富士 ef60 闪光灯</a></div><div class="archive--meta">Nov 11</div></li><li class="archive--item"><div class="archive--title"><a href="/story/mac-studio-m2/">Mac Studio M2</a></div><div class="archive--meta">Nov 10</div></li><li class="archive--item"><div class="archive--title"><a href="/story/fuji-xs20/">Fujifilm X-S20 短期使用体验</a></div><div class="archive--meta">Nov 09</div></li><li class="archive--item"><div class="archive--title"><a href="/story/macbook-air-m2/">Macbook Air M2 2022</a></div><div class="archive--meta">Nov 06</div></li><li class="archive--item"><div class="archive--title"><a href="/story/garden-pavilion/">榕阁 Garden Pavilion</a></div><div class="archive--meta">Nov 04</div></li></ul><h3 class="archive--title__month">October</h3><ul class="archive--list"><li class="archive--item"><div class="archive--title"><a href="/story/hugo-theme-notability/">Hugo 主题 Notability</a></div><div class="archive--meta">Oct 30</div></li><li class="archive--item"><div class="archive--title"><a href="/story/hugo-theme-farallon/">Hugo 主题 Farallon</a></div><div class="archive--meta">Oct 30</div></li><li class="archive--item"><div class="archive--title"><a href="/story/andaz-shenzhen-bay/">深圳湾安达仕酒店</a></div><div class="archive--meta">Oct 30</div></li><li class="archive--item"><div class="archive--title"><a href="/story/park-hyatt-shenzhen/">深圳柏悦酒店</a></div><div class="archive--meta">Oct 29</div></li><li class="archive--item"><div class="archive--title"><a href="/story/xf23/">富士 XF23mm F1.4 R LM WR</a></div><div class="archive--meta">Oct 26</div></li><li class="archive--item"><div class="archive--title"><a href="/story/x100v/">Fujifilm X100V 全家桶使用体验</a></div><div class="archive--meta">Oct 26</div></li><li class="archive--item"><div class="archive--title"><a href="/story/sofort/">徕卡 Sofort</a></div><div class="archive--meta">Oct 26</div></li><li class="archive--item"><div class="archive--title"><a href="/story/xf33/">富士 XF33mm F1.4 R LM WR</a></div><div class="archive--meta">Oct 25</div></li><li class="archive--item"><div class="archive--title"><a href="/story/xf56/">富士 XF56mm F1.2 R WR</a></div><div class="archive--meta">Oct 25</div></li><li class="archive--item"><div class="archive--title"><a href="/story/xf18/">富士 XF18mm F1.4 R LM WR</a></div><div class="archive--meta">Oct 25</div></li><li class="archive--item"><div class="archive--title"><a href="/story/xf90/">富士 XF 90mm f/2 R LM WR</a></div><div class="archive--meta">Oct 24</div></li></ul><h2 class="archive--title__year">2021</h2><h3 class="archive--title__month">October</h3><ul class="archive--list"><li class="archive--item"><div class="archive--title"><a href="/story/fox-umbrellas/">Fox Umbrellas</a></div><div class="archive--meta">Oct 31</div></li></ul></div></div>
+
+{# 
+{{ define "main" }}
+
+<div class="layoutSingleColumn">
+    <div class="page--archive">
+        {{ range .Pages.ByPublishDate.Reverse.GroupByDate "2006" }}
+        {{ if (where .Pages "Section" "story") }}
+        <h2 class="archive--title__year">{{ .Key }}</h2>
+        {{ range .Pages.ByPublishDate.Reverse.GroupByDate "January" }}
+        <h3 class="archive--title__month">{{ .Key }}</h3>
+        <ul class="archive--list">
+            {{ range ((where .Pages "Section" "story")) }}
+            <li class="archive--item">
+                <div class="archive--title">
+                    <a href="{{ .RelPermalink }}">
+                        {{ .Title }}
+                    </a>
+                </div>
+                <div class="archive--meta">{{ .PublishDate.Format "Jan 02" }}</div>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }} #}

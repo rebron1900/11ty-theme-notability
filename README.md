@@ -1,104 +1,162 @@
-# Hugo Theme Notability
+![ByMattLee 11ty Starter Screenshot](http://hosted.bymattlee.com/github/bymattlee-11ty-starter-screenshot.jpg)
 
-Hugo theme
+# ByMattLee 11ty Starter
 
-## How to use
+A starter boilerplate powered by [11ty](https://www.11ty.dev/), [Sanity](https://www.sanity.io/), [Gulp](https://gulpjs.com/), [Tailwind CSS](https://tailwindcss.com/), [rollup.js](https://rollupjs.org/), [Alpine.js](https://alpinejs.dev/) and [Taxi.js](https://taxi.js.org/).
+
+[VIEW DEMO](https://bymattlee-11ty-starter.netlify.app/)
+
+---
+
+## Installation
+
+##### 1. Install Node 16.17.1 LTS: <https://nodejs.org/>
+
+##### 2. Install Yarn
 
 ```
-git submodule add https://github.com/bigfa/hugo-theme-notability.git themes/notability
-
-echo "theme = 'notability'" >> config.toml
+$ npm i -g yarn
 ```
 
-## Release Note
+##### 3. Install all dependencies
 
-### 0.3.1
+```
+$ yarn
+```
 
--   add comment
+---
 
-### 0.3.0
+## Configuration
 
--   add dark mode support
--   add back to top button
+In `config.js`, update Sanity options and environment URLs for project compilation.
 
-### 0.2.0
+---
 
--   Added status post format
+## Use
 
-### 0.1.8
+##### Build Files For Development And Initialize Watch
 
--   In-post link shortcode
+```
+$ yarn dev
+```
 
-### 0.1.7
+##### Build Files For Staging
 
--   Multilingual support for relative time
--   Detail style adjustments
+```
+$ yarn stage
+```
 
-### 0.1.6
+##### Build Files For Production
 
--   Fixed link rendering issue
+```
+$ yarn prod
+```
 
-### 0.1.5
+---
 
--   Structured data support
+## General Features
 
-### 0.1.4
+-   Features [Gulp](https://gulpjs.com/) as the build pipeline that renders HTML, compiles styles and scripts, and optimizes assets.
+-   Data is coming from the Sanity Cloud API. This pairs perfectly with the [ByMattLee Sanity Studio Starter](https://github.com/bymattlee/bymattlee-sanity-studio-starter)
+-   Spins up a local development environment through Browsersync
+-   Browser reload when NJK, JS, image, SVG or asset files are updated
+-   Styles are injected when SCSS files are updated
 
--   Article table of contents support
+##### Markup
 
-### 0.1.3
+-   Features [11ty](https://www.11ty.dev/) as the static site generator
+-   Markup is minified in staging and production environments
+-   Site data can be set in `src/site/_data`
+-   Pages in `src/site` will be compiled to `dist`
+-   `src/site/_includes/layouts/base.njk` serves as the base template for the site
+-   `src/site/_includes/partials` contains site partials and components that are reused across the site (modular HTML)
 
--   Ordered list style correction
+##### Styles
 
-### 0.1.2
+-   Features [Tailwind CSS](https://tailwindcss.com/), a utility-first framework
+-   Includes linter (Stylelint), autoprefixer, minification and sourcemap creation
+-   SCSS files are located in `src/assets/scss`
+-   `main.scss` in `src/assets/scss` serves as the base that includes the other dependent SASS files
+-   `main.scss` gets compiled to `dist/assets/css/main.min.css`
+-   `.stylelintrc` contains the settings for Stylelint
+-   Info about class namespacing can be found in `src/assets/scss/main.scss`
+-   Unused CSS (PurgeCSS) will be removed in staging and production builds
 
--   Detail adjustments on the list page
+##### Scripts
 
-### 0.1.1
+-   Features [rollup.js](https://rollupjs.org/guide/en/) as the module bundler
+-   Includes linting (ESLint), concatenation, minification and sourcemap creation
+-   Includes [Taxi.js](https://taxi.js.org/) for seamless page transitions
+-   Includes a custom framework for reuseable content animations
+-   Includes [Alpine.js](https://alpinejs.dev/) for declarative DOM manipulation
+-   `main.js` in `src/assets/js` serves as the main JS file that includes and runs all components and will be compiled to `dist/assets/js/main.min.js`
+-   All local components should be placed in `src/assets/js/components`
+-   All vendor JS can be manually added to `src/assets/js/vendors` if not found on Yarn
+-   `.eslintrc` contains the settings for ESLint
 
--   Added i8n support
+##### Images
 
-### 0.1.0
+-   Place all unoptimized images in the `src/assets/images` directory
+-   They will then be optimized and placed in `dist/assets/images`
+-   Responsive images will be generated at the following widths (if larger): 200w, 400w, 600w, 800w, 1000w, 1200w, 1400w, 1600w, 1800w
+-   Use `imageSrc` shortcode to render responsive `srcset` in markup
 
--   Added author information for the theme
+##### SVGS
 
-### 0.0.9
+-   Place all SVG files in the `src/assets/svg` directory
+-   They will then be optimized and added to a sprite at `dist/assets/svg/sprite.svg`
 
--   Fixed the time formatting error in Safari browser
+##### Other Assets
 
-### 0.0.8
+-   All assets (fonts, videos, swfs, etc) under `src/assets` will be copied to `dist/assets` on build
 
--   Changed to local entry retrieval, no token setting required
+##### Sitemap
 
-### 0.0.7
+-   Generates a sitemap based on the HTML files in `dist`
 
--   New DouBan entries support
+##### Robots.txt
 
-### 0.0.6
+-   Generates a robots.txt file
+-   Configuration can be found in `src/site/robots.njk`
 
--   Header style changes
--   Mobile style optimization
+---
 
-### 0.0.5
+## Tailwind CSS Notes
 
--   List style adjustments
--   Fixed time calculation error
+-   All Tailwind settings can be found in `./tailwind.config.js`
+-   Most styles should be written as utility classes in the template markup but custom SCSS can be used for unique properties and/or magic numbers
+-   Utilize the [`@apply`](https://tailwindcss.com/docs/functions-and-directives#apply) directive when writing custom SCSS for efficiency:
 
-### 0.0.4
+```scss
+svg {
+    @apply u-inline-block u-fill-current;
+}
+```
 
--   Added relative time
--   Use `normalize.css`
--   Localized fonts
+-   Tailwind settings can be accessed with the [`theme()`](https://tailwindcss.com/docs/functions-and-directives#theme) function:
 
-### 0.0.3
+```scss
+.button {
+    animation-duration: theme('transitionDuration.normal');
+}
+```
 
--   Added menu configuration
--   Removed redundant pages
+-   Media queries can be used with the shorthand `screen()` function:
 
-### 0.0.2
+```scss
+.button {
+    margin-right: 2.8rem;
+    @screen sm {
+        margin-right: 4.2rem;
+    }
+}
+```
 
--   Fixed some UI issues on the DouBan page
+---
 
-### 0.0.1
+## Contact
 
--   Initial release
+-   Matt Lee - `@bymattlee` on most platforms
+-   Visit my website at [bymattlee.com](https://bymattlee.com)
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/bymattlee?style=social)](https://twitter.com/bymattlee)

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% set pageTitle =  post.title %}
+{% set siteTitle =  site.title %}
+
+<html lang="{{ site.title | safe }}" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <title>{% if pageTitle %}{{pageTitle}} | {% endif %} {{ siteTitle }}</title>
+    {% include 'partials/head.njk' %}
+</head>
+
+<body>
+    {% include 'partials/navigation.njk' %}
+    <main class="main">
+       {{ content | safe }}
+    </main>
+    {% include 'partials/footer.njk' %}
+</body>
+
+</html>
+
+

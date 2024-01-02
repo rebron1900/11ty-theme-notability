@@ -1,0 +1,19 @@
+---
+layout: base
+pagination:
+  data: collections.tagsPagetion
+  size: 1
+  alias: paged
+permalink: "tag/{{ paged.tagSlug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}index.html"
+eleventyComputed:
+  title: "'{{ paged.tagName | safe }}' Articles"
+  pageDescription: "{{ category.description | safe }}"
+excludeFromSitemap: true
+---
+<div class="layoutSingleColumn">
+    <div class="articleList u-xs-paddingTop15">
+        {%include "partials/memo.njk" %}
+        {%include "partials/post.njk" %}
+    </div>
+    {%include "partials/pagination.njk" %}
+</div>

@@ -1,0 +1,44 @@
+<article class="u-pt-[15px] u-pb-[5px] u-rounded-[8px] u-mb-[20px] u-flex u-items-center u-max-h-">
+    <div class="content">
+        <header class="u-flex u-items-center u-mb-[10px]">
+            <img src="https://bigfa.github.io/images/avatar.jpeg" class="u-rounded-full u-mr-[10px] u-w-max-[100%] u-h-auto" width="48" height="48">
+            <a datetime="2023-11-13 17:13:11" class="u-text-[14px] u-leading-[1.6] u-text-text-gray-light u-break-all u-mb-[4px]" href="https://bigfa.github.io/memo/1/" itemprop="datePublished">2 月前</a>
+        </header>
+        <div class="u-text-[14px] u-leading-[1.6] u-text-text-gray-light u-break-all u-mb-[4px]" itemprop="about">
+            <p>捣鼓了一下午给 hugo 加上了 algolia 搜索，如果啥都是默认的话还好，但是想自定义一些样式的话真不是一般人能整 …</p>
+        </div>
+    </div>
+</article>
+
+{# ---
+pagination:
+  data: collections.posts
+  size: 7
+  alias: posts
+permalink: /{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumber }}/{% endif %}
+---
+{% if posts %}
+{% for post in posts %}
+<article class="articleItem articleItem__withImage">
+    {% if post.feature_image %}
+    <img src="{{ post.feature_image }}" alt="{{ post.feature_image_alt }}" class="cover" />
+    {% endif %}
+    <div class="content">
+        <h2 class="title">
+            <a href="{{ post.url }}">
+                {{ post.title }}
+            </a>
+        </h2>
+        <div class="summary">{{ post.excerpt }}</div>
+        <div class="time"><time datetime='{{ post.published_at }}' class="humane--time">{{ post.published_at }}</time>
+            {% if post.tags %}
+            {% for tag in tags %}
+            <span class="dot"></span>
+            <a href="{{ tag.name }}">{{ tag.slug }}</a>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</article>
+{% endfor %}
+{% endif %} #}

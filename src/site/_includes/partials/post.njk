@@ -1,0 +1,20 @@
+{% if posts %}
+{% for post in posts %}
+<article class="u-pt-[15px] u-pb-[5px] u-rounded-[8px] u-mb-[20px] u-flex u-items-center u-max-h-">
+    {% if post.feature_image %}
+    <img src="{{ post.feature_image }}" alt="{{ post.feature_image_alt }}" class="u-mr-[15px] u-w-[105px] u-h-[105px] u-object-cover u-rounded-[4px] u-flex-none" />
+    {% endif %}
+    <div class="content">
+        <h2 class="u-text-[20px] u-mb-[5px] u-leading-[1.2] u-font-bold">
+            <a href="{{ post.slug | absoluteUrl }}">
+                {{ post.title }}
+            </a>
+        </h2>
+        <div class="u-text-[14px] u-leading-[1.6] u-text-text-gray-light u-break-all u-mb-[4px] u-max-h-[40px] u-overflow-hidden u-text-ellipsis u-line-clamp-2" >{{ post.excerpt }}</div>
+        <div class="u-text-[14px] u-text-text-gray-light"><time datetime='{{ post.published_at }}' class="humane--time">{{ post.published_at }}</time>
+        {% include 'partials/tagloop.njk' %}
+        </div>
+    </div>
+</article>
+{% endfor %}
+{% endif %}

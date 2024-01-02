@@ -1,0 +1,23 @@
+
+<div class="u-py-[20px] u-text-[14px] u-flex u-items-center">
+    {% if  not paged.first %}
+    {% if post.permalink != pagination.previousPageHref %}
+    <span class="prev">
+        <a href="{{ pagination.previousPageHref }}">
+            <span class="arrow">←</span>
+        </a>
+    </span>
+    {% endif %}      
+    {% endif %}
+
+
+    {% if  not paged.last  %}
+    {% if post.permalink != pagination.nextPageHref %}
+    <span class="u-ml-auto">
+        <a href="{{ pagination.nextPageHref }}">
+           <span class="arrow">→</span>
+        </a>
+    </span>
+    {% endif %}      
+    {% endif %}
+</div>

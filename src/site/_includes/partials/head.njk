@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,minimal-ui,shrink-to-fit=no">
+{% if site.icon %}
+<link type="image/vnd.microsoft.icon" href="{{ site.icon | safe }}" rel="shortcut icon">
+{% endif %}
+
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:url" content="{{ site.url }}">
+<meta property="og:image" content="{{ site.cover_image}}">
+<meta property="og:description" content="{{ site.description}}">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:src" content="{{ site.cover_image}}">
+<meta name="twitter:title" content="{{ site.title }}">
+<meta name="twitter:description" content="{{ site.description}}">
+
+
+{{ site.codeinjection_head | safe }}
+
+
+<link href="{{ site.url | absoluteUrl }}/feed.xml" rel="alternate" type="application/rss+xml" title="{{ site.title }}" />
+<link href="{{ site.url | absoluteUrl }}/feed.xml" rel="feed" type="application/rss+xml" title="{{ site.title }}" />
+
+<link rel="stylesheet" href="{{ '/assets/css/main.min.css' | absoluteUrl | cacheBust }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<link rel="stylesheet" href="https://1900.live/public/cards.min.css">
