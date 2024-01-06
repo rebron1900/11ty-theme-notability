@@ -1,7 +1,7 @@
 {% if pagetype == 'single' %}
     <div class="u-flex u-justify-between u-border-solid u-border-b-1 u-border-grey-dark-1">
         <p class="VPLastUpdated">
-        作者: <a href="{{ post.authors[0].slug | absoluteUrl}}"> {{ post.authors[0].name }} </a>
+        作者: <a href="#"> {{ post.authors[0].name }} </a>
         </p>
         <p class="VPLastUpdated">
         最后修改: <time datetime="{{ post.updated_at | htmlDate }}">{{ post.updated_at | htmlDate }}</time>
