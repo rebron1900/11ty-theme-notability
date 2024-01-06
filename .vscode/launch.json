@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "name": "运行脚本: start",
+            "request": "launch",
+            "command": "yarn run start",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

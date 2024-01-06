@@ -3,15 +3,16 @@ layout: base
 pagination:
   data: collections.tagsPagetion
   size: 1
-  alias: paged
-permalink: "tag/{{ paged.tagSlug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}index.html"
-eleventyComputed:
-  title: "'{{ paged.tagName | safe }}' Articles"
-  pageDescription: "{{ category.description | safe }}"
+  alias: tags
+permalink: "tag/{{ tags.tagSlug }}/{% if tags.number > 1 %}{{ tags.number }}/{% endif %}index.html"
 excludeFromSitemap: true
 ---
-<div class="layoutSingleColumn">
-    <div class="articleList u-xs-paddingTop15">
+{% set pagetype = "tags" %}
+<div class="u-max-w-[720px] u-mx-auto u-w-[92%]">
+    <div class="u-pt-[50px] u-pb-[30px]">
+
+        {% set data = tags.posts %}
+
         {%include "partials/memo.njk" %}
         {%include "partials/post.njk" %}
     </div>

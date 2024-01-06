@@ -6,9 +6,13 @@ pagination:
   alias: posts
 permalink: /{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumber }}/{% endif %}
 ---
+{% set pagetype = "index" %}
 <div class="u-max-w-[720px] u-mx-auto u-w-[92%]">
     <div class="u-pt-[50px] u-pb-[30px]">
-        {%include "partials/memo.njk" %}
+        
+        {% set data = posts %}
+
+        {# {%include "partials/memo.njk" %} #}
         {%include "partials/post.njk" %}
     </div>
     {%include "partials/pagination.njk" %}

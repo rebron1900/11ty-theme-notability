@@ -2,29 +2,32 @@
 /* ***** Parse Content Transform
 /* ***** ----------------------------------------------- ***** */
 
-const jsdom = require('jsdom')
+const {JSDOM} = require('jsdom')
 const imageSrcset = require('./../shortcodes/imageSrcset')
-const { JSDOM } = jsdom
+const dom = new JSDOM();
+const { window } = dom;
+const { document, Node, DocumentFragment, XPathResult } = window;
+const pangu = require('pangu/src/browser/pangu');
+const hljs  = require("highlight.js")
+global.Node = Node;
+global.DocumentFragment = DocumentFragment;
+global.XPathResult = XPathResult;
 
 module.exports = (content, outputPath) => {
   if (outputPath.endsWith('.html')) {
-    const DOM = new JSDOM(content)
-    const document = DOM.window.document
-
     // Add lazyload to all article images
-    const articleImages = [...document.querySelectorAll('.u-rich-text img')]
+    const articleImages = [...document.querySelectorAll('.u-rich-text img,figure > img')]
     if (articleImages.length) {
       articleImages.forEach((image) => {
         // Set image src to data-src
         const imageSrc = image.getAttribute('src')
-        image.setAttribute('data-srcset', imageSrcset(imageSrc))
+        image.setAttribute('srcset', imageSrcset(imageSrc))
         image.removeAttribute('src')
 
         // Add lazyload class for lazysizes plugin
         image.classList.add('lazyload')
       })
     }
-
 
     // Wrap video player with container to make size responsive and add lazyload
     const articleVideos = [...document.querySelectorAll('.u-rich-text iframe')]
@@ -56,7 +59,14 @@ module.exports = (content, outputPath) => {
       })
     }
 
-    return document.documentElement.outerHTML
+    global.document = document;
+    // add pangu space and hilghight code block
+    document.body.innerHTML = content;
+    pangu.spacingPageBody();
+    hljs.highlightAll();
+
+    return document.body.innerHTML
   }
+
   return content
 }

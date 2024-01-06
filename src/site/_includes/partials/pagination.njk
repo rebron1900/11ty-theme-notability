@@ -1,23 +1,33 @@
-
-<div class="u-py-[20px] u-text-[14px] u-flex u-items-center">
-    {% if  not paged.first %}
-    {% if post.permalink != pagination.previousPageHref %}
-    <span class="prev">
-        <a href="{{ pagination.previousPageHref }}">
-            <span class="arrow">←</span>
-        </a>
-    </span>
-    {% endif %}      
+<div class="u-py-[20px] u-text-[14px] u-flex u-justify-between">
+    {% if not tags.first %}
+        {% if post.permalink != pagination.previousPageHref %}
+            <a class="u-w-1/2 u-text-left u-border-solid u-border-[1px] u-border-[gray] u-rounded-[8px] u-max-w-[48%] u-p-[10px] u-leading-loose" href="{{ pagination.previousPageHref | absoluteUrl }}">
+                <span class="u-text-[16] u-w-[50%]  u-block u-text-left u-pl-[10px]">
+                    上一页
+                </span>
+                <span class="u-text-[16]  u-text-left u-pl-[10px] u-line-clamp-1">
+                    {% if pagetype == 'single' %}
+                        {{ pagination.page.previous.title }}
+                    {% endif %}
+                </span>
+            </a>
+        {% endif %}
     {% endif %}
 
+    {% if not tags.last %}
+        {% if post.permalink != pagination.nextPageHref %}
 
-    {% if  not paged.last  %}
-    {% if post.permalink != pagination.nextPageHref %}
-    <span class="u-ml-auto">
-        <a href="{{ pagination.nextPageHref }}">
-           <span class="arrow">→</span>
-        </a>
-    </span>
-    {% endif %}      
+            <a class="u-w-1/2 u-text-right u-ml-auto u-border-solid u-border-[1px] u-border-[gray] u-rounded-[8px] u-max-w-[48%] u-p-[10px] u-leading-loose" href="{{ pagination.nextPageHref  | absoluteUrl }}">
+                <span class="u-text-[16] u-w-[50%] u-ml-auto  u-block  u-text-right u-pr-[10px]">
+                    下一页
+                </span>
+                <span class="u-text-[16] u-ml-auto u-text-right u-pr-[10px] u-line-clamp-1">
+                    {% if pagetype == 'single' %}
+                        {{ pagination.page.next.title }}
+                    {% endif %}
+                </span>
+            </a>
+
+        {% endif %}
     {% endif %}
 </div>

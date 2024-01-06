@@ -57,13 +57,13 @@ const scriptsMain = () => {
         'umd'
       )
     )
-    .pipe(
-      terser({
-        format: {
-          comments: false,
-        },
-      })
-    )
+    // .pipe(
+    //   terser({
+    //     format: {
+    //       comments: false,
+    //     },
+    //   })
+    // )
     .pipe(concat('main.js'))
     .pipe(
       rename({

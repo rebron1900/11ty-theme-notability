@@ -3,6 +3,7 @@
 /* ***** ----------------------------------------------- ***** */
 
 const { DateTime } = require('luxon')
+const { format } = require('timeago.js')
 
 module.exports = (isoDate) => {
   return DateTime.fromISO(isoDate).toFormat('yyyy-MM-dd')

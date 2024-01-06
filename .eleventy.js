@@ -18,6 +18,7 @@ const articleUrl = require("./eleventy/filters/articleUrl.js");
 const articleCategoryUrl = require("./eleventy/filters/articleCategoryUrl.js");
 const highlight = require("./eleventy/filters/highlight.js");
 
+
 // Import shortcodes
 // const imageUrl = require("./eleventy/shortcodes/imageUrl.js");
 const imageSrcset = require("./eleventy/shortcodes/imageSrcset.js");
@@ -26,10 +27,12 @@ const svg = require("./eleventy/shortcodes/svg.js");
 const currentYear = require("./eleventy/shortcodes/currentYear.js");
 
 const ghostContentAPI = require("@tryghost/content-api");
-const { ghost } = require("./config.js");
+const { ghost, memos } = require("./config.js");
 
 // Init Ghost API
 const api = new ghostContentAPI({ ...ghost });
+
+const axios = require("axios");
 
 module.exports = function (config) {
   // Transforms
@@ -88,9 +91,9 @@ module.exports = function (config) {
         console.error(err);
       });
 
-      collection.forEach((page) => {
-        page.tags = page.tags.filter((tag) => tag.visibility == "public");
-      });
+    collection.forEach((page) => {
+      page.tags = page.tags.filter((tag) => tag.visibility == "public");
+    });
 
     return collection;
   });
@@ -111,6 +114,8 @@ module.exports = function (config) {
     collection.forEach((post) => {
       post.tags = post.tags.filter((tag) => tag.visibility == "public");
     });
+
+    var dates = await axios.get(memos.url);
 
     return collection;
   });
@@ -216,10 +221,10 @@ module.exports = function (config) {
       });
       // if (taggedPosts.length) tag.posts = taggedPosts;
       if (taggedPosts.length) {
-        const numberOfPage = Math.ceil(taggedPosts.length / 7);
+        const numberOfPage = Math.ceil(taggedPosts.length/7);
         for (let pageNum = 1; pageNum <= numberOfPage; pageNum++) {
-          const sliceFrom = (pageNum - 1) * 7;
-          const sliceTo = sliceFrom + 7;
+          const sliceFrom  = (pageNum - 1) * 7;
+          const sliceTo  = sliceFrom + 7;
 
           pagedPosts.push({
             tagName: tag.name,
@@ -227,15 +232,17 @@ module.exports = function (config) {
             number: pageNum,
             posts: taggedPosts.slice(sliceFrom, sliceTo),
             first: pageNum === 1,
-            last: pageNum === 7,
-          });
+            last: pageNum === numberOfPage
+          })
           tag.posts = pagedPosts;
         }
+        
       }
     });
 
     return pagedPosts;
   });
+
 
   return {
     dir: {

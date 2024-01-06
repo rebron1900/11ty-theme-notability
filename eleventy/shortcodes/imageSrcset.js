@@ -9,8 +9,8 @@ const { envUrls } = require("../../config.js");
 
 // Generate responsive image srcset based on width
 module.exports = (image, isLocal = false) => {
+  image = encodeURI(image);
   let imageSrcset = [];
-
   const imageWidths = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800];
 
   if (image.match(envUrls.cdnUrl)) {

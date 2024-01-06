@@ -6,12 +6,16 @@ pagination:
   alias: page
 permalink: /{{ page.slug }}/
 ---
-<div class="layoutSingleColumn u-paddingTop50">
-    <h2 class="title">{{ page.title }}</h2>
-    <div class="content graph">
+<div class="u-pt-[50px] u-max-w-[720px] u-mx-auto u-w-[92%]">
+    <h2 class="u-text-[28px] u-font-[700] u-leading-[1.4] u-mb-[15px]">{{ page.title }}</h2>
+    {% if page.feature_image %}
+    <figure class="u-mt-[0] -u-mx-[50px] u-mb-[25px] u-relative u-leading-none u-overflow-hidden">
+        <img src="{{ page.feature_image }}" alt="{{ page.feature_image_alt }}">
+    </figure>
+    {% endif %}
+    <div class="u-text-text-main-color u-break-all u-text-[16px] u-rich-text">
         {{ page.html | safe }}
+        {% include "partials/author.njk" %}
     </div>
-    <div class="tags u-paddingTop20">
-        {% include 'partials/tagloop.njk' %}
-    </div>
+    {% include "partials/comment.njk" %}
 </div>

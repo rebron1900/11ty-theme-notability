@@ -125,5 +125,9 @@
     .o-button {
       @apply u-no-underline;
     }
+
+    img{
+      @apply u-rounded-[4px]
+    }
   }
 }
