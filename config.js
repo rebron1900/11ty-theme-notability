@@ -6,7 +6,7 @@ module.exports = {
     cdnUrl: 'https://cdn.1900.live'
   },
   ghost: {
-    url: 'https://1900.live',
+    url: 'https://cms.1900.live',
     key: '78e1deb26260dcc3a2fbf7cf82',
     version: "v5.0"
   },
