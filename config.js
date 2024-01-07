@@ -3,11 +3,13 @@ module.exports = {
     development: 'http://localhost:3000',
     staging: 'https://11ty.1900.live',
     production: 'https://11ty.1900.live',
-    cdnUrl: 'https://cdn.1900.live'
+    cdnUrl: 'https://cdn.1900.live',
+    devData: '20',
+    proData: 'all'
   },
   ghost: {
     url: 'https://cms.1900.live',
-    key: '78e1deb26260dcc3a2fbf7cf82',
+    key: '54bae25f075f027aba23d6f657',
     version: "v5.0"
   },
   memos: {

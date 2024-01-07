@@ -27,12 +27,14 @@ const svg = require("./eleventy/shortcodes/svg.js");
 const currentYear = require("./eleventy/shortcodes/currentYear.js");
 
 const ghostContentAPI = require("@tryghost/content-api");
-const { ghost, memos } = require("./config.js");
+const { ghost, memos, envUrls } = require("./config.js");
 
 // Init Ghost API
 const api = new ghostContentAPI({ ...ghost });
 
 const axios = require("axios");
+
+const loadData = process.env.NODE_ENV.trim() == 'development' ? envUrls.devData:envUrls.proData;
 
 module.exports = function (config) {
   // Transforms
@@ -103,7 +105,7 @@ module.exports = function (config) {
     collection = await api.posts
       .browse({
         include: "tags,authors",
-        limit: "all",
+        limit: loadData,
         order: "published_at desc",
         filter: "visibility:public",
       })

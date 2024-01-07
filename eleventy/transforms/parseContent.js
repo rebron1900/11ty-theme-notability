@@ -63,6 +63,9 @@ module.exports = (content, outputPath) => {
     // add pangu space and hilghight code block
     document.body.innerHTML = content;
     pangu.spacingPageBody();
+    hljs.configure({
+      languages: ['text'] // 设置默认语言为 'text'
+    });
     hljs.highlightAll();
 
     return document.body.innerHTML
