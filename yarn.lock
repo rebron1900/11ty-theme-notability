@@ -6748,6 +6748,11 @@ liftoff@^3.1.0:
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
+lightense-images@^1.0.17:
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/lightense-images/-/lightense-images-1.0.17.tgz#e371c43726b6c75b3429d9767d34bffb975a264d"
+  integrity sha512-onaXGhmKWFxnihtb0XOCIHs7ubyaFerFQ6uBal7BXhvZtLwGa6kClFI0/Kw0puQCZb7SY8gYFh9coYWZ7HhMXQ==
+
 lilconfig@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.4.tgz#f4507d043d7058b380b6a8f5cb7bcd4b34cee082"
@@ -7133,6 +7138,11 @@ mdurl@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
+
+medium-zoom@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/medium-zoom/-/medium-zoom-1.1.0.tgz#6efb6bbda861a02064ee71a2617a8dc4381ecc71"
+  integrity sha512-ewyDsp7k4InCUp3jRmwHBRFGyjBimKps/AJLjRSox+2q/2H4p/PNpQf+pwONWlJiOudkBXtbdmVbFjqyybfTmQ==
 
 memoizee@0.4.X:
   version "0.4.15"

@@ -14,14 +14,19 @@ global.DocumentFragment = DocumentFragment;
 global.XPathResult = XPathResult;
 
 module.exports = (content, outputPath) => {
+  global.document = document;
+  // add pangu space and hilghight code block
+  document.body.innerHTML = content;
+
   if (outputPath.endsWith('.html')) {
     // Add lazyload to all article images
-    const articleImages = [...document.querySelectorAll('.u-rich-text img,figure > img')]
+    const articleImages = [...document.querySelectorAll('.u-rich-text img,figure > img,article img')]
     if (articleImages.length) {
       articleImages.forEach((image) => {
         // Set image src to data-src
         const imageSrc = image.getAttribute('src')
         image.setAttribute('srcset', imageSrcset(imageSrc))
+        image.setAttribute('data-sizes','auto')
         image.removeAttribute('src')
 
         // Add lazyload class for lazysizes plugin
@@ -59,13 +64,8 @@ module.exports = (content, outputPath) => {
       })
     }
 
-    global.document = document;
-    // add pangu space and hilghight code block
-    document.body.innerHTML = content;
+
     pangu.spacingPageBody();
-    hljs.configure({
-      languages: ['text'] // 设置默认语言为 'text'
-    });
     hljs.highlightAll();
 
     return document.body.innerHTML

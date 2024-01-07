@@ -16,13 +16,13 @@ module.exports = (image, isLocal = false) => {
   if (image.match(envUrls.cdnUrl)) {
     // If image is local, determine the width of the image and then generate
     // markup for images at sizes smaller than the image
-
     imageWidths.forEach((width) => {
       imageSrcset.push(`${image}!${width}w ${width}w`);
     });
   } else if(image.match('unsplash.com')){
     imageWidths.forEach((width) => {
-      imageSrcset.push(`${image}&w=${width} ${width}w`);
+      const updatedUrl = image.replace(/(w=)[^\&]+/, '$1'+width)
+      imageSrcset.push(`${updatedUrl} ${width}w`);
     });
   } else {
     imageSrcset.push(image);
