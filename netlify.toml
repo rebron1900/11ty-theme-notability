@@ -3,11 +3,6 @@
   publish = "dist"
 
 [[redirects]]
-  from = "/*"
-  to = "/404/"
-  status = 404
-
-[[redirects]]
   from = "/ghost/"
   to = "https://cms.1900.live/ghost/"
   status = 301
@@ -18,3 +13,8 @@
   to = "https://cms.1900.live/:splat/edit"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404/"
+  status = 404
