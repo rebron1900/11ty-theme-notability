@@ -1,8 +1,8 @@
 module.exports = {
   envUrls: {
     development: 'http://localhost:3000',
-    staging: 'https://11ty.1900.live',
-    production: 'https://11ty.1900.live',
+    staging: 'https://www.1900.live',
+    production: 'https://www.1900.live',
     cdnUrl: 'https://cdn.1900.live',
     devData: '20',
     proData: 'all'
