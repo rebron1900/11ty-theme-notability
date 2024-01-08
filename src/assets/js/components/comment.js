@@ -6,9 +6,9 @@ const initComment = ()=> {
             server:    commentinfo.server,  // 后端地址
             site:      commentinfo.name,    // 你的站点名
         });
-        artalk.on('list-loaded', (e) => {
-            artalk.setDarkMode(localStorage.getItem('pref') == 'dark' ? true:false);
-        })
+        // artalk.on('list-loaded', (e) => {
+        //     artalk.setDarkMode(localStorage.getItem('pref') == 'dark' ? true:false);
+        // })
     }
 }
 

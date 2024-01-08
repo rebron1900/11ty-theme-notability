@@ -5,6 +5,7 @@ export default function initMediumZoom() {
   const images = document.querySelectorAll('.u-rich-text img');
   mediumZoom(images, {
     background: 'rgba(0,0,0,0.75)',
+    container: '.medium-zoom-overlay'
   });
 }
 
