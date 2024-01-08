@@ -39,7 +39,7 @@ module.exports = (content, outputPath) => {
     if (articleVideos.length) {
       articleVideos.forEach((video) => {
         const videoSrc = video.getAttribute('src')
-        if (videoSrc.includes('youtube') || videoSrc.includes('vimeo')) {
+        if (videoSrc.includes('youtube') || videoSrc.includes('vimeo') || videoSrc.includes('bilibili')) {
           // If YouTube, add lazyload attributes
           // Lazyloading with Vimeo will disable fullscreen so we don't include it here
           if (videoSrc.includes('youtube')) {

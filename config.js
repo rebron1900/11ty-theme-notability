@@ -4,7 +4,7 @@ module.exports = {
     staging: 'https://www.1900.live',
     production: 'https://www.1900.live',
     cdnUrl: 'https://cdn.1900.live',
-    devData: '20',
+    devData: '40',
     proData: 'all'
   },
   ghost: {
