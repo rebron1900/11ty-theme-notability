@@ -2,10 +2,10 @@
     {% if not tags.first %}
         {% if post.permalink != pagination.previousPageHref %}
             <a class="{% if pagetype != 'index' %} u-w-1/2  u-max-w-[48%] {% endif %} u-text-left u-border-solid u-border-[1px] u-border-[gray] u-rounded-[8px] u-p-[10px] u-leading-loose" href="{{ pagination.previousPageHref | absoluteUrl }}">
-                <span class="u-text-[16]  u-block u-text-left ">
+                <span class="u-text-[16px]  u-block u-text-left ">
                     上一页
                 </span>
-                <span class="u-text-[16]  u-text-left  u-line-clamp-1">
+                <span class="u-text-[16px]  u-text-left  u-line-clamp-1">
                     {% if pagetype == 'single' %}
                         {{ pagination.page.previous.title }}
                     {% endif %}
@@ -18,10 +18,10 @@
         {% if post.permalink != pagination.nextPageHref %}
 
             <a class="{% if pagetype != 'index' %} u-w-1/2  u-max-w-[48%] {% endif %} u-text-right u-ml-auto u-border-solid u-border-[1px] u-border-[gray] u-rounded-[8px] u-p-[10px] u-leading-loose" href="{{ pagination.nextPageHref  | absoluteUrl }}">
-                <span class="u-text-[16]  u-ml-auto  u-block  u-text-right ">
+                <span class="u-text-[16px]  u-ml-auto  u-block  u-text-right ">
                     下一页
                 </span>
-                <span class="u-text-[16] u-ml-auto u-text-right  u-line-clamp-1">
+                <span class="u-text-[16px] u-ml-auto u-text-right  u-line-clamp-1">
                     {% if pagetype == 'single' %}
                         {{ pagination.page.next.title }}
                     {% endif %}

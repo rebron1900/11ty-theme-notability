@@ -22,7 +22,7 @@ import sourcemaps from 'gulp-sourcemaps'
 import terser from 'gulp-terser'
 
 // Environment variables
-const isDevelopment = process.env.NODE_ENV === 'development'
+const isDevelopment = process.env.NODE_ENV.trim() === 'development'
 
 // Lint files with ESLint
 const scriptsLint = () => {
@@ -57,13 +57,13 @@ const scriptsMain = () => {
         'umd'
       )
     )
-    // .pipe(
-    //   terser({
-    //     format: {
-    //       comments: false,
-    //     },
-    //   })
-    // )
+    .pipe(
+      terser({
+        format: {
+          comments: false,
+        },
+      })
+    )
     .pipe(concat('main.js'))
     .pipe(
       rename({

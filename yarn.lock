@@ -10142,6 +10142,11 @@ sucrase@^3.32.0:
     pirates "^4.0.1"
     ts-interface-checker "^0.1.9"
 
+sugar-high@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/sugar-high/-/sugar-high-0.5.6.tgz#4c8704814879d3d863feb8c2251547c3a8085288"
+  integrity sha512-VfBxzjVfnYuiYpsjCKp8Jp9zE4pz15eBgMF4wROppvEumQobGIYyKSUaF14Fax4W3KMFZenIg6gAVM3LQZcb3A==
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"

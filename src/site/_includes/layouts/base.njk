@@ -2,17 +2,19 @@
 {% set pageTitle =  post.title %}
 {% set siteTitle =  site.title %}
 
-<html lang="{{ site.title | safe }}" prefix="og: http://ogp.me/ns#" class="dark">
+<html lang="{{ site.lang }}" prefix="og: http://ogp.me/ns#">
 
 <head>
     <title>{% if pageTitle %}{{pageTitle}} | {% endif %} {{ siteTitle }}</title>
     {% include 'partials/head.njk' %}
 </head>
 
-<body class="dark:u-bg-grey-dark-1 u-bg-background-white">
+<body class="u-bg-background-white dark:u-bg-[#111010]" >
     {% include 'partials/navigation.njk' %}
-    <main class="main">
+    <main class="main" data-taxi >
+        <div data-taxi-view> 
        {{ content | safe }}
+       </div>
     </main>
     {% include 'partials/footer.njk' %}
 </body>

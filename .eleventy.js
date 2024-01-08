@@ -37,8 +37,6 @@ const axios = require("axios");
 const loadData = process.env.NODE_ENV.trim() == 'development' ? envUrls.devData:envUrls.proData;
 
 module.exports = function (config) {
-  // Transforms
-  // config.addTransform("parseContent", parseContent);
   if (process.env.NODE_ENV.trim() !== "development")
     config.addTransform("minifyHtml", minifyHtml);
   config.addTransform("addHeaderCredit", addHeaderCredit);
@@ -69,8 +67,6 @@ module.exports = function (config) {
 
   // Layout aliases
   config.addLayoutAlias("base", "layouts/base.njk");
-  // config.addLayoutAlias("default", "layouts/default.njk");
-  // config.addLayoutAlias("page", "layouts/page.njk");
 
   config.addFilter("getReadingTime", (text) => {
     const wordsPerMinute = 200;

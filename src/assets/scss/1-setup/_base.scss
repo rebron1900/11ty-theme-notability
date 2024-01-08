@@ -8,7 +8,7 @@
 }
 
 *::selection {
-  @apply u-bg-background-gray-light u-text-text-main-color;
+  @apply u-bg-grey-dark-6 u-text-white dark:u-bg-grey-light-c dark:u-text-text-main-color;
 }
 
 html {
@@ -23,7 +23,7 @@ body {
 
 a {
   @apply u-text-text-main-color hover:u-text-text-gray-light active:u-text-text-gray-medium u-no-underline
-    u-transition-colors u-duration-slow;
+    u-transition-colors u-duration-slow dark:u-text-[#d4d4d4];
 }
 
 button {
@@ -37,4 +37,23 @@ svg {
 input,
 textarea {
   @apply u-bg-transparent  u-rounded-none u-outline-none focus-visible:u-outline-none;
+}
+
+span,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+blockquote,
+time {
+  @apply dark:u-text-[#d4d4d4];
+}
+
+code.hljs {
+  @apply u-p-[1em];
 }

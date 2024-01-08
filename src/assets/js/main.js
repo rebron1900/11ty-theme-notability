@@ -35,6 +35,7 @@
 import { initComment } from "./components/comment.js";
 import eventHandler from "./components/handler.js"
 import initMediumZoom  from "./components/image_medium.js"
+import { Core } from '@unseenco/taxi'
 
 // init
 initComment();
@@ -49,3 +50,6 @@ gallery.forEach(function(e) {
       , a = e.attributes.width.value / e.attributes.height.value;
     l.style.flex = a + " 1 0%"
 });
+
+
+const taxi = new Core()
