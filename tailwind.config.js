@@ -4,7 +4,6 @@ const { pxToEm, fontFallbacks } = require('./tailwindUtilities.js')
 module.exports = {
   mode: 'jit',
   prefix: 'u-',
-  important: true,
   theme: {
     screens: {
       xxs: pxToEm(360),

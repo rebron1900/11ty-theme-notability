@@ -14,9 +14,9 @@
 		</div>
 		{% if site.navigation %}
 
-			<nav class="u-flex menu u-content-center u-ml-auto u-text-[14px] max-sm:u-hidden">
+			<nav class="menu u-content-center  u-flex u-ml-auto u-text-[14px] max-sm:u-hidden ">
 				{% for item in site.navigation %}
-					<a class="u-mx-[15px] u-items-center u-flex" href="{{ item.url | absoluteUrl }}">{{ item.label }}</a>
+					<a class="u-mx-[15px] u-items-center u-font-bold " href="{{ item.url | absoluteUrl }}">{{ item.label }}</a>
 				{% endfor %}
 			</nav>
 		{% endif %}

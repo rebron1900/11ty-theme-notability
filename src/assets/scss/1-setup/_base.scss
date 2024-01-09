@@ -23,7 +23,7 @@ body {
 
 a {
   @apply u-text-text-main-color hover:u-text-text-gray-light active:u-text-text-gray-medium u-no-underline
-    u-transition-colors u-duration-slow dark:u-text-[#d4d4d4];
+    u-transition-colors u-duration-slow dark:u-text-[#d4d4d4] dark:hover:u-text-white;
 }
 
 button {
@@ -50,10 +50,15 @@ h5,
 h6,
 li,
 blockquote,
-time {
+time,
+hr {
   @apply dark:u-text-[#d4d4d4];
 }
 
 code.hljs {
   @apply u-p-[1em];
+}
+
+code{
+  @apply u-bg-[#424242] u-text-white  
 }
