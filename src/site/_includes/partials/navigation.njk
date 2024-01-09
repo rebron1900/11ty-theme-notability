@@ -2,14 +2,14 @@
 	<div class="u-max-w-[720px] u-mx-auto u-w-[92%]  u-pointer-events-auto u-flex u-items-center u-relative u-h-[78px]" itemprop="publisher" itemscope
 		itemtype="https://schema.org/Organization">
 		<h1 class="u-mr-0" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-			<a href='{{ absoluteUrl }}' class="flex">
+			<a href='{{ '' | absoluteUrl }}' class="flex">
 				{% if site.logo %}
 					<img src="{{ site.logo }}" class="metabar--logoImage" width="38" height="47"/>
 				{% endif %}
 			</a>
 		</h1>
 		<div class="u-flex u-flex-col u-relative u-leading-[1.5] u-mx-[10px] ">
-			<a href="{{ absoluteUrl }}" class="u-text-[16px] u-font-bold">{{ site.title }}</a>
+			<a href="{{ '' | absoluteUrl }}" class="u-text-[16px] u-font-bold">{{ site.title }}</a>
 			<span class="u-italic u-text-[12px]">{{ site.description }}</span>
 		</div>
 		{% if site.navigation %}

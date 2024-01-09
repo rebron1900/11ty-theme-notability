@@ -6,7 +6,7 @@
 {% endif %}
 
 <meta property="og:title" content="{{ site.title }}">
-<meta property="og:url" content="{{ site.url }}">
+<meta property="og:url" content="{{ absoluteUrl }}">
 <meta property="og:image" content="{{ site.cover_image}}">
 <meta property="og:description" content="{{ site.description}}">
 <meta property="og:type" content="article">
@@ -17,8 +17,8 @@
 
 {{ site.codeinjection_head | safe }}
 
-<link href="{{ site.url | absoluteUrl }}/feed.xml" rel="alternate" type="application/rss+xml" title="{{ site.title }}"/>
-<link href="{{ site.url | absoluteUrl }}/feed.xml" rel="feed" type="application/rss+xml" title="{{ site.title }}"/>
+<link href="{{ absoluteUrl }}/feed.xml" rel="alternate" type="application/rss+xml" title="{{ site.title }}"/>
+<link href="{{ absoluteUrl }}/feed.xml" rel="feed" type="application/rss+xml" title="{{ site.title }}"/>
 
 <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | absoluteUrl | cacheBust }}">
 <link rel="stylesheet" media="screen and (prefers-color-scheme: light)" href="https://cdnjs.webstatic.cn/ajax/libs/highlight.js/11.9.0/styles/default.min.css">

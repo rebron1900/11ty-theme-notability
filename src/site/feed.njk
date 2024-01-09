@@ -5,8 +5,8 @@ permalink: feed.xml
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.title }}</title>
   <subtitle>{{ site.description }}</subtitle>
-  <link href="{{ '/feed.xml' | absoluteUrl }}" rel="self"/>
-  <link href="{{ '/' | absoluteUrl }}"/>
+  <link href="{{ '' | absoluteUrl }}" rel="self"/>
+  <link href="{{ '' | absoluteUrl }}"/>
   {% if collections.posts %}
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
   {% endif %}
