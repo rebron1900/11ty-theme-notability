@@ -20,7 +20,7 @@
     "selector-attribute-quotes": "always",
     "color-named": [
       "never",
-      ignore: ["inside-function"]
+      "ignore": ["inside-function"]
     ],
     "font-weight-notation": "numeric",
     "order/properties-alphabetical-order": true,

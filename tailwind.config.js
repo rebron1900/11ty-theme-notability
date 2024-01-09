@@ -19,29 +19,22 @@ module.exports = {
       current: 'currentColor',
       black: '#000',
       white: '#fff',
-      'grey-dark': {
-        1: '#111',
-        2: '#222',
-        3: '#333',
-        4: '#444',
-        5: '#555',
-        6: '#666',
+      'main-bd-color': {
+        light: 'rgb(229, 229, 229)',
+        dark: 'rgb(64, 64, 64)'
       },
-      'grey-light': {
-        a: '#aaa',
-        c: '#ccc',
+      'main-bg-color': {
+        light: 'rgb(255, 255, 255)',
+        dark: 'rgb(17, 16, 16)'
       },
-      'main-bg-color': 'rgba(0, 87, 217)',
-      'main-hover-color': 'rgba(104, 156, 233, 1)',
-      'text-main-color': 'rgba(0, 0, 0, 0.86)',
-      'text-gray-medium': 'rgba(0, 0, 0, 0.7)',
-      'text-gray-lightest': 'rgba(0, 0, 0, 0.55)',
-      'text-gray-light': 'rgba(0, 0, 0, 0.6)',
-      'background-gray-light': '#f2f4f6',
-      'background-gray-lightest': '#fafafa',
-      'background-white': '#fff',
-      'main-border-color': 'rgba(0, 0, 0, 0.1)',
-      'main-border-color-light': 'rgba(0, 0, 0, 0, 0.05)',
+      'secondly-bg-color': {
+        light: 'rgb(250, 250, 250)',
+        dark: 'rgb(38, 38, 38)'
+      },
+      'main-text-color': {
+        light: 'rgb(64, 64, 64)',
+        dark: 'rgb(212, 212, 212)'
+      },
     },
     fontFamily: {
       body: ['Open Sans', ...fontFallbacks],
