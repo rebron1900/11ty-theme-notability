@@ -8,5 +8,5 @@ module.exports = (collection) => {
   if (!collection || !collection.length) return ''
 
   // Newest date in the collection
-  return collection[0].publishedAt
+  return collection[0].published_at
 }
