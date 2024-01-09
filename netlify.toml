@@ -2,6 +2,13 @@
   command = "yarn prod"
   publish = "dist"
 
+
+[[redirects]]
+  from = "/rss"
+  to = "/feed.xml"
+  status = 200
+
+
 [[redirects]]
   from = "/ghost/"
   to = "https://cms.1900.live/ghost/"
@@ -13,11 +20,6 @@
   to = "https://cms.1900.live/:splat/edit"
   status = 301
   force = true
-
-
-[[redirects]]
-  from = "/rss"
-  to = "/feed.xml"
 
 [[redirects]]
   from = "/*"
