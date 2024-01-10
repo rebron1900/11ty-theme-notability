@@ -23,7 +23,7 @@
       "ignore": ["inside-function"]
     ],
     "font-weight-notation": "numeric",
-    "order/properties-alphabetical-order": true,
+    "order/properties-alphabetical-order": null,
     "declaration-empty-line-before": "never",
     "at-rule-no-unknown": null,
     "no-descending-specificity": null,

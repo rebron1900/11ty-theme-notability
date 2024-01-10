@@ -215,7 +215,7 @@ module.exports = function (config) {
     // Attach posts to their respective tags
     collection.forEach(async (tag) => {
       const taggedPosts = posts.filter((post) => {
-        return post.primary_tag && post.primary_tag.slug === tag.slug;
+        return post.tags.some(ptag => ptag.slug === tag.slug);
       });
       // if (taggedPosts.length) tag.posts = taggedPosts;
       if (taggedPosts.length) {

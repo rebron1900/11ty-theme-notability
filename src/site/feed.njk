@@ -18,7 +18,7 @@ permalink: rss.xml
     <entry>
       <title>{{ post.title }}</title>
       <link href="{{ post.slug | articleUrl }}"/>
-      <updated>{{ post.published_at | rssDate }}</updated>
+      <updated>{{ post.published_at }}</updated>
       <id>{{ post.slug | articleUrl }}</id>
       {% if post.html %}
         <content type="html"><![CDATA[

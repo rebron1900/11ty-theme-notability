@@ -2,14 +2,14 @@
 {% set pageTitle =  post.title %}
 {% set siteTitle =  site.title %}
 
-<html lang="{{ site.lang }}" prefix="og: http://ogp.me/ns#">
+<html lang="{{ site.lang }}" prefix="og: http://ogp.me/ns#" >
 
 <head>
     <title>{% if pageTitle %}{{pageTitle}} | {% endif %} {{ siteTitle }}</title>
     {% include 'partials/head.njk' %}
 </head>
 
-<body class="u-bg-background-white dark:u-bg-[#111010]" >
+<body class="dark:u-bg-main-bg-color-dark u-bg-main-bg-color-light">
     {% include 'partials/navigation.njk' %}
     <main class="main" data-taxi >
         <div data-taxi-view> 

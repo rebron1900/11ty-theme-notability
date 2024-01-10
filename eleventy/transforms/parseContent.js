@@ -77,7 +77,11 @@ module.exports = (content, outputPath) => {
     ];
     if (codes.length) {
       codes.forEach((code) => {
-      hljs.highlightBlock(code);
+        if(hljs.getLanguage(code.className.replaceAll('language-','')) == undefined){
+          code.className = 'language-plaintext'
+        }
+        hljs.highlightElement(code);
+      
       })
     }
     return document.documentElement.outerHTML;

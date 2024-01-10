@@ -37,8 +37,9 @@ import eventHandler from "./components/handler.js"
 import initMediumZoom  from "./components/image_medium.js"
 import { Core } from '@unseenco/taxi'
 
+
 // init
-initComment();
+initComment(window.commentinfo);
 eventHandler();
 initMediumZoom();
 
