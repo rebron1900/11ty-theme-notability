@@ -109,10 +109,6 @@ module.exports = function (config) {
         console.error(err);
       });
 
-    collection.forEach((post) => {
-      post.tags = post.tags.filter((tag) => tag.visibility == "public");
-    });
-
     var dates = await axios.get(memos.url);
 
     return collection;
@@ -149,7 +145,6 @@ module.exports = function (config) {
       .browse({
         include: "count.posts",
         limit: "all",
-        filter: "visibility:public",
       })
       .catch((err) => {
         console.error(err);
@@ -188,7 +183,6 @@ module.exports = function (config) {
       .browse({
         include: "count.posts",
         limit: "all",
-        filter: "visibility:public",
       })
       .catch((err) => {
         console.error(err);
@@ -206,9 +200,9 @@ module.exports = function (config) {
         console.error(err);
       });
 
-    posts.forEach((post) => {
-      post.tags = post.tags.filter((tag) => tag.visibility == "public");
-    });
+    // posts.forEach((post) => {
+    //   post.tags = post.tags.filter((tag) => tag.visibility == "public");
+    // });
 
     const pagedPosts = [];
 

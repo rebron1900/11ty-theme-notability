@@ -1,6 +1,8 @@
 {% if post.tags %}
-<span class="before:u-content-['·'] before:u-mx-[4px]"></span>
-{% for tag in post.tags %}
-<a href="{{ tag.slug | articleCategoryUrl }}">{{ tag.name }}</a>,
-{% endfor %}
+    <span class="before:u-content-['·'] before:u-mx-[4px]"></span>
+    {% for tag in post.tags %}
+        {% if tag.visibility == 'public' %}
+            <a href="{{ tag.slug | articleCategoryUrl }}">{{ tag.name }}</a>,
+        {% endif %}
+    {% endfor %}
 {% endif %}

@@ -11,7 +11,7 @@
 
 <body class="dark:u-bg-main-bg-color-dark u-bg-main-bg-color-light">
     {% include 'partials/navigation.njk' %}
-    <main class="main" data-taxi >
+    <main class="main {% if page %} {{page.slug}} {% endif%}" data-taxi >
         <div data-taxi-view> 
        {{ content | safe }}
        </div>
