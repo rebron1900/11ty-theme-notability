@@ -2,7 +2,7 @@
 {% for post in data %}
 <article class="u-py-[15px] u-px-[5px] u-rounded-[8px] u-mb-[20px] u-flex u-items-center u-max-h-">
     {% if post.feature_image %}
-    <img src="{{ post.feature_image }}" alt="{{ post.feature_image_alt }}" class="u-mr-[15px] u-w-[105px] u-h-[105px] u-object-cover u-rounded-[4px] u-flex-none" />
+    <img src="{{ post.feature_image }}" sizes="(max-width: 300px) 100px, 200px"  alt="{{ post.feature_image_alt }}" class="u-mr-[15px] u-w-[105px] u-h-[105px] u-object-cover u-rounded-[4px] u-flex-none" />
     {% endif %}
     <div class="content">
         <h2 class="u-text-[20px] u-mb-[5px] u-leading-[1.2] u-font-bold dark:u-text-[#d4d4d4]">

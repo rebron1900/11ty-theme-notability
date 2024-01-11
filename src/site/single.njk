@@ -41,8 +41,8 @@ permalink: /{{ post.slug }}/
     </details>
     {{- end }} #}
     {% if post.feature_image %}
-    <figure class="u-mt-[0] md:-u-mx-[50px] u-mb-[25px] u-relative u-leading-none u-overflow-hidden">
-        <img src="{{ post.feature_image }}" alt="{{ post.feature_image_alt }}">
+    <figure class="u-mt-[0] md:-u-mx-[50px]  u-mb-[25px] u-relative u-leading-none u-overflow-hidden">
+        <img class="u-w-full" src="{{ post.feature_image }}" alt="{{ post.feature_image_alt }}">
         {% if post.feature_image_caption  %}
         <figcaption class="max-sm:u-static u-text-[12px] u-text-center u-absolute u-bottom-[12px] u-left-[12px] u-text-[#fff] u-bg-[rgba(18,18,18,.8)] u-rounded-[5px] u-px-[10px] u-py-[8px]">{{ post.feature_image_caption | safe }}</figcaption>
         {% endif %}
