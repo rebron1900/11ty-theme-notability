@@ -24,7 +24,7 @@ body {
 
 a {
   @apply u-text-main-text-color-light  u-no-underline
-    u-transition-colors u-duration-slow dark:u-text-main-text-color-dark;
+    u-transition-colors u-duration-slow dark:u-text-main-text-color-dark hover:u-text-main-hover-color;
 }
 
 button {

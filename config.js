@@ -4,8 +4,9 @@ module.exports = {
     staging: 'https://1900.live',
     production: 'https://1900.live',
     cdnUrl: 'https://cdn.1900.live',
-    devData: 'all',
-    proData: 'all'
+    devData: '20',
+    proData: 'all',
+    customPage: ['archives']
   },
   ghost: {
     url: 'https://cms.1900.live',

@@ -35,6 +35,7 @@ module.exports = {
         light: 'rgb(64, 64, 64)',
         dark: 'rgb(212, 212, 212)'
       },
+      'main-hover-color': 'rgba(104, 156, 233, 1)',
     },
     fontFamily: {
       body: ['Open Sans', ...fontFallbacks],

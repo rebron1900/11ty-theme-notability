@@ -17,7 +17,8 @@ const rssDate = require("./eleventy/filters/rssDate.js");
 const articleUrl = require("./eleventy/filters/articleUrl.js");
 const articleCategoryUrl = require("./eleventy/filters/articleCategoryUrl.js");
 const highlight = require("./eleventy/filters/highlight.js");
-
+const groupbydate = require("./eleventy/filters/groupbydate.js");
+const usMonth = require("./eleventy/filters/usMonth.js");
 
 // Import shortcodes
 // const imageUrl = require("./eleventy/shortcodes/imageUrl.js");
@@ -26,15 +27,20 @@ const isSamePageOrSection = require("./eleventy/shortcodes/isSamePageOrSection.j
 const svg = require("./eleventy/shortcodes/svg.js");
 const currentYear = require("./eleventy/shortcodes/currentYear.js");
 
+
 const ghostContentAPI = require("@tryghost/content-api");
 const { ghost, memos, envUrls } = require("./config.js");
 
 // Init Ghost API
 const api = new ghostContentAPI({ ...ghost });
+// const pd = require("pandas");
 
 const axios = require("axios");
 
-const loadData = process.env.NODE_ENV.trim() == 'development' ? envUrls.devData:envUrls.proData;
+const loadData =
+  process.env.NODE_ENV.trim() == "development"
+    ? envUrls.devData
+    : envUrls.proData;
 
 module.exports = function (config) {
   if (process.env.NODE_ENV.trim() !== "development")
@@ -57,6 +63,8 @@ module.exports = function (config) {
     const numberOfWords = text.split(/\s/g).length;
     return Math.ceil(numberOfWords / wordsPerMinute);
   });
+  config.addFilter("groupbydate", groupbydate);
+  config.addFilter("usMonth", usMonth);
 
   // Shortcodes
   // config.addShortcode("imageUrl", imageUrl);
@@ -64,6 +72,7 @@ module.exports = function (config) {
   config.addShortcode("isSamePageOrSection", isSamePageOrSection);
   config.addShortcode("svg", svg);
   config.addShortcode("currentYear", currentYear);
+
 
   // Layout aliases
   config.addLayoutAlias("base", "layouts/base.njk");
@@ -89,9 +98,10 @@ module.exports = function (config) {
         console.error(err);
       });
 
-    collection.forEach((page) => {
-      page.tags = page.tags.filter((tag) => tag.visibility == "public");
-    });
+      collection = collection.filter(function(page){
+        return envUrls.customPage.indexOf(page.slug);
+      })
+
 
     return collection;
   });
@@ -109,7 +119,6 @@ module.exports = function (config) {
         console.error(err);
       });
 
-    var dates = await axios.get(memos.url);
 
     return collection;
   });
@@ -209,14 +218,14 @@ module.exports = function (config) {
     // Attach posts to their respective tags
     collection.forEach(async (tag) => {
       const taggedPosts = posts.filter((post) => {
-        return post.tags.some(ptag => ptag.slug === tag.slug);
+        return post.tags.some((ptag) => ptag.slug === tag.slug);
       });
       // if (taggedPosts.length) tag.posts = taggedPosts;
       if (taggedPosts.length) {
-        const numberOfPage = Math.ceil(taggedPosts.length/7);
+        const numberOfPage = Math.ceil(taggedPosts.length / 7);
         for (let pageNum = 1; pageNum <= numberOfPage; pageNum++) {
-          const sliceFrom  = (pageNum - 1) * 7;
-          const sliceTo  = sliceFrom + 7;
+          const sliceFrom = (pageNum - 1) * 7;
+          const sliceTo = sliceFrom + 7;
 
           pagedPosts.push({
             tagName: tag.name,
@@ -224,17 +233,15 @@ module.exports = function (config) {
             number: pageNum,
             posts: taggedPosts.slice(sliceFrom, sliceTo),
             first: pageNum === 1,
-            last: pageNum === numberOfPage
-          })
+            last: pageNum === numberOfPage,
+          });
           tag.posts = pagedPosts;
         }
-        
       }
     });
 
     return pagedPosts;
   });
-
 
   return {
     dir: {

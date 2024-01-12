@@ -1,0 +1,35 @@
+---
+layout: base
+permalink: /archives/index.html
+---
+
+<div class="u-max-w-[720px] u-mx-auto u-w-[92%]">
+    <div class="u-pt-[30px] u-pb-[30px]">
+        {% for post in collections.posts | groupbydate %}
+            {% if post.data %}
+                {% for month in post.data %}
+                    <h2 class="u-text-[24px] u-font-bold">{{post.year}}</h2>
+                    {% if post.data %}
+                        {% for month in post.data %}
+                            {% if month.data %}
+                                <h3 class="u-text-[20px] u-font-normal">{{ month.month | usMonth }}</h3>
+                                <ul class="u-grid u-grid-cols-[repeat(2,1fr)] u-gap-5 u-px-0 u-py-5;">
+                                    {% for monthdata in month.data %}
+                                        <li class="u-p-[15px]">
+                                            <div class="u-leading-[1.4] u-text-[14px]">
+                                                <a href="{{monthdata.slug | absoluteUrl }}">
+                                                    {{monthdata.title}}
+                                                </a>
+                                            </div>
+                                            <div class="u-text-[14px]">{{monthdata.published_at | htmlDate }}</div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
