@@ -47,6 +47,18 @@
     @apply u-font-body u-leading-normal u-text-14 sm:u-text-16;
   }
 
+  a{
+    &:hover{
+      @apply u-text-main-hover-color;
+    }
+  }
+
+  figcaption{
+    & > a{
+      @apply u-text-main-text-color-dark u-underline;
+    }
+  }
+
   .u-rich-text {
     > * {
       &:first-child {
@@ -128,6 +140,17 @@
 
     img{
       @apply u-rounded-[4px]
+    }
+
+    figure{
+      @apply u-mt-[0] md:-u-mx-[50px]  u-mb-[25px] u-relative u-leading-none u-overflow-hidden;
+    }
+    figcaption{
+      @apply max-sm:u-static u-text-[12px] u-text-center u-absolute u-bottom-[12px] u-left-[12px] u-text-[#fff] u-bg-[rgba(18,18,18,.8)] u-rounded-[5px] u-px-[10px] u-py-[8px];
+
+      & > p {
+          @apply u-leading-tight u-m-0;
+      }
     }
   }
 }

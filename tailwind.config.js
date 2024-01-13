@@ -25,7 +25,8 @@ module.exports = {
       },
       'main-bg-color': {
         light: 'rgb(255, 255, 255)',
-        dark: 'rgb(17, 16, 16)'
+        dark: 'rgb(17, 16, 16)',
+        box:'rgb(153,153,153)'
       },
       'secondly-bg-color': {
         light: 'rgb(250, 250, 250)',
@@ -35,7 +36,7 @@ module.exports = {
         light: 'rgb(64, 64, 64)',
         dark: 'rgb(212, 212, 212)'
       },
-      'main-hover-color': 'rgba(104, 156, 233, 1)',
+      'main-hover-color': 'rgb(104, 156, 233)',
     },
     fontFamily: {
       body: ['Open Sans', ...fontFallbacks],
