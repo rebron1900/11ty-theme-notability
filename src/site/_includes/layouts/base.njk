@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-{% set pageTitle =  post.title %}
-{% set siteTitle =  site.title %}
+{% set pageTitle = post.title %}
+{% set siteTitle = site.title %}
 
-<html lang="{{ site.lang }}" prefix="og: http://ogp.me/ns#" >
+<html lang="{{ site.lang }}" prefix="og: http://ogp.me/ns#">
 
-<head>
-    <title>{% if pageTitle %}{{pageTitle}} | {% endif %} {{ siteTitle }}</title>
-    {% include 'partials/head.njk' %}
-</head>
+    <head>
+        <title>
+            {% if pageTitle %}{{pageTitle}} | {% endif %}
+            {{ siteTitle }}</title>
+        {% include 'partials/head.njk' %}
+    </head>
 
-<body class="dark:u-bg-main-bg-color-dark u-bg-main-bg-color-light">
-    {% include 'partials/navigation.njk' %}
-    <main class="main {% if page %} {{page.slug}} {% endif%}" data-taxi >
-        <div data-taxi-view> 
-       {{ content | safe }}
-       </div>
-    </main>
-    {% include 'partials/footer.njk' %}
-</body>
+    <body x-data :class="{ 'menu-actived': $store.menuOverlay.isOpen }" class="dark:u-bg-main-bg-color-dark u-bg-main-bg-color-light">
+        {% include 'partials/navigation.njk' %}
+        <main class="main {% if page %} {{page.slug}} {% endif%}" data-taxi >
+            <div data-taxi-view>
+                {{ content | safe }}
+            </div>
+        </main>
+        {% include 'partials/footer.njk' %}
+    </body>
 
 </html>
-
-

@@ -33,15 +33,14 @@
 
 // Lately.init({ target: 'time, .lately' });
 import { initComment } from "./components/comment.js";
-import eventHandler from "./components/handler.js"
 import initMediumZoom  from "./components/image_medium.js"
 import { Core } from '@unseenco/taxi'
-
+import { init as globalInit } from './components/global.js'
 
 // init
 initComment(window.commentinfo);
-eventHandler();
 initMediumZoom();
+globalInit();
 
 
 //init kg-gallery-image

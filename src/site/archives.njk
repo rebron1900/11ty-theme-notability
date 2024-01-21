@@ -3,7 +3,7 @@ layout: base
 permalink: /archives/index.html
 ---
 
-<div class="u-max-w-[720px] u-mx-auto u-w-[92%]">
+<div class="l-container">
     <div class="u-pt-[30px] u-pb-[30px]">
         {% for post in collections.posts | groupbydate %}
             {% if post.data %}
@@ -15,7 +15,7 @@ permalink: /archives/index.html
                             {% for monthdata in month.data %}
                                 <li class="u-p-[15px]">
                                     <div class="u-leading-[1.4] u-text-[14px]">
-                                        <a href="{{monthdata.slug | absoluteUrl }}">
+                                        <a href="{{monthdata.slug | articleUrl }}">
                                             {{monthdata.title}}
                                         </a>
                                     </div>

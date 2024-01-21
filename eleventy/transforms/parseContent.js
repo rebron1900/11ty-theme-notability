@@ -26,11 +26,10 @@ module.exports = (content, outputPath) => {
         const imageSrc = image.getAttribute("src");
         image.setAttribute("srcset", imageSrcset(imageSrc));
         image.setAttribute("data-sizes", "auto");
-        image.setAttribute("loading", "");
         image.removeAttribute("src");
 
         // Add lazyload class for lazysizes plugin
-        //image.classList.add("lazyload");
+        image.classList.add("lazyload");
       });
     }
 

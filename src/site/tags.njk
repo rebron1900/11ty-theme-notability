@@ -7,7 +7,7 @@ pagination:
 permalink: "tag/{{ tags.tagSlug }}/{% if tags.number > 1 %}{{ tags.number }}/{% endif %}index.html"
 ---
 {% set pagetype = "tags" %}
-<div class="u-max-w-[720px] u-mx-auto u-w-[92%]" >
+<div class="l-container" >
     <div class="u-pt-[30px] u-pb-[30px]">
 
         {% set data = tags.posts %}
