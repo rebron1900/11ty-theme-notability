@@ -7,8 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Build
-        uses: TartanLlama/actions-eleventy@master
+      # - name: Build
+      #   uses: TartanLlama/actions-eleventy@master
 
       - name: Set Node.js 20.x
         uses: actions/setup-node@master
