@@ -19,10 +19,10 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build
-        run: npx eleventy
+        run: yarn prod
 
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
